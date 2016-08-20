@@ -4,7 +4,6 @@ body > header, footer{
     min-height: 50px;
     min-width: 100px;
 }
-
 body > footer{
     text-align: center;
 }
@@ -20,3 +19,22 @@ th {
 td {
     background: #DDD;
 }
+.successMessage, .infoMessage, .errorMessage{
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    border-color: black;
+    border-width: 1px;
+    box-shadow: #AAAAAA;
+}
+
+.successMessage {
+    background: #66ff33;
+}
+.infoMessage {
+    background: #ffff66;
+}
+.errorMessage {
+    background: #ff3300;
+}
+

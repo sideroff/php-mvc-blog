@@ -8,6 +8,7 @@
         </tr>
 
         <?php
+        var_dump($_SESSION);
         foreach ($this->posts as $post) : ?>
             <tr>
                 <td><?=$post['title']?></td>

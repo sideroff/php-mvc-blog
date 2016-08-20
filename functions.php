@@ -11,6 +11,7 @@ function parseURL(string $url){
 
     //default:
     //TODO PUT DEFAULT VALUES IN CONFIG
+    
     $controllerName = "home";
     $actionName = "index";
     $params = [];
@@ -23,6 +24,7 @@ function parseURL(string $url){
             $actionName = $urlParts[1];
             //if we have more than 2 next ones must be params
             if(count($urlParts)>2){
+                //parts after url must be params so we slice with offset of 2
                 $params = array_slice($urlParts,2);
             }
         }
@@ -31,7 +33,11 @@ function parseURL(string $url){
     if(class_exists($controllerName . "controller")){
         $controllerClassName = $controllerName . "controller";
         //if class exists: init it with given params if any
-        echo("controller " . $controllerName . " action: " . $actionName);
+
+        //TODO remove this
+        echo("controller: " . $controllerName . " action: " . $actionName);
+
+
         $controller = new $controllerClassName($controllerName,$actionName);
     }
     else {
