@@ -4,6 +4,6 @@ $(document).ready(function() {
     });
 
     setTimeout(function(){
-        $(".successMessage, .infoMessage, .errorMessage").fadeOut(); }, 3000);
+        $(".successMessage, .infoMessage, .errorMessage").fadeOut(); },10000);
 
 });
