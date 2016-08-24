@@ -5,6 +5,7 @@ class UsersModel extends BaseModel{
         $statement = self::$db->prepare("SELECT id, password_hash FROM users WHERE username = ?");
         $statement->bind_param("s",$_POST[FORM_USERNAME]);
         $statement->execute();
+        
         return $statement;
     }
 
@@ -18,6 +19,15 @@ class UsersModel extends BaseModel{
             $_POST[FORM_LAST_NAME],
             $_POST[FORM_EMAIL]);
         $statement->execute();
+        
+        return $statement;
+    }
+    
+    public function getDataForUsername($username){
+        $statement = self::$db->prepare("SELECT username, first_name, last_name, email FROM users WHERE username = ?");
+        $statement->bind_param("s",$username);
+        $statement->execute();
+        
         return $statement;
     }
 }

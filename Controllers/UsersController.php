@@ -2,15 +2,36 @@
 
 class UsersController extends BaseController
 {
+    public function profile($params){
+        $username = $params[0];
+        $statement = $this->model->getDataForUsername($username);
+        if($statement->error){
+            $this->addMessage("Something's wrong!" . $statement->error,self::$errorMsg);
+            $this->redirect("Home");
+        }
+        $_SESSION['statement'] = $statement;
+        
+        
+        
+    }
+    
+    public function register(){
+        $this->checkIfLoggedIn();
 
-    public function login()
-    {
+        if($this->isPost){
+            $this->checkRegistrationData();
+            $this->model->register();
+        }
+    }
+
+    public function login(){
         $this->checkIfLoggedIn();
 
         if ($this->isPost) {
             $username = $_POST[FORM_USERNAME];
             $password = $_POST[FORM_PASSWORD];
             $statement = $this->model->login($username, $password);
+            
             if($statement->error) {
                 $this->addMessage("Login failed" . $statement->error, self::$errorMsg);
                 $this->redirect("Users","Login");
@@ -24,19 +45,16 @@ class UsersController extends BaseController
             }
         }
     }
-    public function register(){
-        $this->checkIfLoggedIn();
 
-        if($this->isPost){
-            $this->checkRegistrationData();
-            $this->model->register();
-        }
+    public function logout(){
+        session_destroy();
+        $this->redirect("Home");
     }
+    
     private function checkRegistrationData(){
         $shouldRedirect = false;
-
+        
         //---------- FORM CHECKS ----------
-
         //username
         if(strlen($_POST[FORM_USERNAME]) < USERNAME_MIN_LENGTH ||
             strlen($_POST[FORM_USERNAME]) > USERNAME_MAX_LENGTH) {
@@ -45,7 +63,7 @@ class UsersController extends BaseController
                 " characters long.", self::$errorMsg);
             $shouldRedirect=true;
         }
-
+        
         //password
         if(!preg_match(PASSWORD_REGEX,$_POST[FORM_PASSWORD])){
             $this->addMessage("Password should contain 1 lowercase letter, 1 uppercase letter, 1 digit, 1 special character, and be between"
@@ -81,8 +99,10 @@ class UsersController extends BaseController
                 ." characters long.",self::$errorMsg);
             $shouldRedirect = true;
         }
+        
         //this field is for user end check only -> we don't need it
         unset($_POST[FORM_CONFIRM_PASSWORD]);
+        
         if($shouldRedirect){
             //when rendering the form we don't want to fill in password fields
             unset($_POST[FORM_PASSWORD]);
@@ -92,6 +112,7 @@ class UsersController extends BaseController
         else{
             $_POST[FORM_PASSWORD] = hash(DEFAULT_HASH_ALGORITHM,$_POST[FORM_PASSWORD]);
             $statement = $this->model->register();
+            
             if($statement->error){
                 $this->addMessage($statement->error, self::$errorMsg);
                 unset($_POST[FORM_PASSWORD]);
@@ -104,24 +125,23 @@ class UsersController extends BaseController
                 $this->login();
             }
         }
-    }
-    public function logout(){
-        session_destroy();
-        $this->redirect("Home");
-    }
+    }    
+    
     private function checkIfLoggedIn(){
         $this->checkSession();
+        
         if($this->isLoggedIn){
             $this->addMessage("You are already logged in!",self::$errorMsg);
             $this->redirect("Home");
         }
     }
+    
     private function checkSession(){
-        if(isset($_SESSION) &&
-        count($_SESSION)>0 &&
-        key_exists('username', $_SESSION) &&
-        key_exists('userId',$_SESSION)){
-
+        if(isset($_SESSION) && 
+            count($_SESSION)>0 &&
+            key_exists('username', $_SESSION) &&
+            key_exists('userId',$_SESSION)){
+            
             $this->isLoggedIn = true;
             return;
         }
