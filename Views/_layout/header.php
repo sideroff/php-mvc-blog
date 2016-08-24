@@ -12,7 +12,10 @@
         <?php if(isset($_SESSION) && key_exists("username",$_SESSION)):
             var_dump($_SESSION);
                 echo '<div class="greeting">Hello, ' .$_SESSION["username"] . '!</div>';
-                echo '<a href="' . APP_ROOT . '/users/logout">Logout</a>"';
+            echo '<a href="' . APP_ROOT . '/users/' . $_SESSION["username"] . '">My Profile</a>';
+            echo '<a href="' . APP_ROOT . '/home/">Home</a>';
+            echo '<a href="' . APP_ROOT . '/posts/">Posts</a>';
+            echo '<a href="' . APP_ROOT . '/users/logout">Logout</a>';
              else :
                  echo '<a href="' . APP_ROOT . '/users/login">Login!</a>';
                  echo '<a href="' . APP_ROOT . '/users/register">Register!</a>';

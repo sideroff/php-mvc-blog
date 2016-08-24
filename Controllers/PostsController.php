@@ -2,7 +2,8 @@
 
 class PostsController
 {
-    public function index($params){
+    public function index(){
+        
         
     }
 }

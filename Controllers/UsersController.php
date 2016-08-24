@@ -36,7 +36,7 @@ class UsersController extends BaseController
         $shouldRedirect = false;
 
         //---------- FORM CHECKS ----------
-        
+
         //username
         if(strlen($_POST[FORM_USERNAME]) < USERNAME_MIN_LENGTH ||
             strlen($_POST[FORM_USERNAME]) > USERNAME_MAX_LENGTH) {
@@ -45,11 +45,11 @@ class UsersController extends BaseController
                 " characters long.", self::$errorMsg);
             $shouldRedirect=true;
         }
-        
+
         //password
         if(!preg_match(PASSWORD_REGEX,$_POST[FORM_PASSWORD])){
             $this->addMessage("Password should contain 1 lowercase letter, 1 uppercase letter, 1 digit, 1 special character, and be between"
-            . PASSWORD_MIN_LENGTH . " and " . PASSWORD_MAX_LENGTH . " characters long.",self::$errorMsg);
+                . PASSWORD_MIN_LENGTH . " and " . PASSWORD_MAX_LENGTH . " characters long.",self::$errorMsg);
             $shouldRedirect=true;
         }
 
