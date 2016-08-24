@@ -19,8 +19,9 @@
         endif ?>
     </header>
     <?php if(isset($_SESSION) && key_exists("messages",$_SESSION)):
+        $id = 1;
         foreach ($_SESSION["messages"] as $msg) {
-            echo '<div class="' . $msg["type"] . 'Message">' . $msg["text"] . '</div>';
+            echo '<div class="' . $msg["type"] . 'Message" id="' . $id++ . '" data-timeout="' . $msg['timeout'] .'">' . $msg["text"] . '</div>';
             }
         unset($_SESSION["messages"]);
     endif ?>

@@ -2,6 +2,7 @@
 
 define('APP_ROOT' , '/blog');
 
+//database connection string params
 define('DB_HOST', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASS', '');
@@ -23,9 +24,8 @@ define('USERNAME_MIN_LENGTH', 5);
 define('USERNAME_MAX_LENGTH', 18);
 define('PASSWORD_MIN_LENGTH', 6);
 define('PASSWORD_MAX_LENGTH', 150);
-define('PASSWORD_REGEX', '(?=^.{' . PASSWORD_MIN_LENGTH .','.PASSWORD_MAX_LENGTH .'}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&;*()_+}{";:;\'?>;.<;,])(?!.*\s).*$');
-define('EMAIL_REGEX',
-    '^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(([0-9]{1,3})|([a-zA-Z]{2,3})|(aero|coop|info|museum|name))$');
+define('PASSWORD_REGEX', '/(?=^.{' . PASSWORD_MIN_LENGTH .','.PASSWORD_MAX_LENGTH .'}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&;*()_+}{";:;\'?>;.<;,])(?!.*\s).*$/');
+define('EMAIL_REGEX','/^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(([0-9]{1,3})|([a-zA-Z]{2,3})|(aero|coop|info|museum|name))$/');
 define('EMAIL_MIN_LENGTH', 5);
 define('EMAIL_MAX_LENGTH', 5);
 define('FIRST_NAME_MIN_LENGTH', 2);

@@ -2,6 +2,10 @@
 
 abstract class BaseController
 {
+    protected static $successMsg = ["type" => "success", "timeout" => 3000];
+    protected static $infoMsg = ["type" => "info", "timeout" => 5000];
+    protected static $errorMsg = ["type" => "error", "timeout" => 10000];
+    
     protected $controllerName;
     protected $model;
     protected $action;
@@ -9,11 +13,6 @@ abstract class BaseController
     protected $posts;
     protected $isLoggedIn = false;
     protected $isPost = false;
-
-
-    protected static $infoMsgType = "info";
-    protected static $successMsgType = "success";
-    protected static $errorMsgType = "error";
 
     public function __construct(string $controllerName, string $action){
         $this->controllerName = $controllerName;
@@ -51,15 +50,17 @@ abstract class BaseController
     public function redirect(string $controllerName, string $actionName = "index", array $params = null) {
         $url = APP_ROOT . "/" . $controllerName . "/" . $actionName;
         if($params && count($params)>0){
-            $url .= implode('/', $params);
+            $url .= "/" . implode('/', $params);
         }
         $this->redirectToUrl($url);
     }
 
-    public function addMessage(string $msg, string $type){
+    public function addMessage(string $text, array $msg, int $forceTimeoutInMS = null){
         if(!key_exists("messages",$_SESSION)){
             $_SESSION["messages"] = [];
         }
-        array_push($_SESSION["messages"],array('type' => $type , "text" => $msg));
+        array_push($_SESSION["messages"],array("type" => $msg['type'] ,
+                                                "text" => $text,
+                                                "timeout" => (!$forceTimeoutInMS) ? $msg['timeout'] : $forceTimeoutInMS));
     }
 }
