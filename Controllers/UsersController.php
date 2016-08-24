@@ -10,20 +10,21 @@ class UsersController extends BaseController
         if ($this->isPost) {
             $username = $_POST[FORM_USERNAME];
             $password = $_POST[FORM_PASSWORD];
-            $userId = $this->model->login($username, $password);
-            if($userId) {
-                $_SESSION['userId'] = $userId;
+            $statement = $this->model->login($username, $password);
+            if($statement->error) {
+                $this->addMessage("Login failed" . $statement->error, self::$errorMsg);
+                $this->redirect("Users","Login");
+            }
+            else{
+                $result = $statement->get_result()->fetch_assoc();
+                $_SESSION['userId'] = $result['id'];
                 $_SESSION['username'] = $username;
                 $this->addMessage("Login successful!",self::$successMsg);
                 $this->redirect("Home");
             }
-            else{
-                $this->addMessage("Login was not successful!", self::$errorMsg);
-                $this->redirect("Users","Login");
-            }
         }
     }
-    public function register(array $params = null){
+    public function register(){
         $this->checkIfLoggedIn();
 
         if($this->isPost){
@@ -89,15 +90,18 @@ class UsersController extends BaseController
             $this->redirect("Users","Register");
         }
         else{
-            $id = $this->model->register();
-            if($id){
+            $_POST[FORM_PASSWORD] = hash(DEFAULT_HASH_ALGORITHM,$_POST[FORM_PASSWORD]);
+            $statement = $this->model->register();
+            if($statement->error){
+                $this->addMessage($statement->error, self::$errorMsg);
+                unset($_POST[FORM_PASSWORD]);
+                $_SESSION['post-query'] = $_POST;
+                $this->redirect("Users","Register");
+            }
+            else{
                 $this->addMessage("Registration successful!",self::$successMsg);
                 $this->isPost=true;
                 $this->login();
-            }
-            else{
-                $this->addMessage("Something went wrong while processing your request. Please try again.", self::$errorMsg);
-                $this->redirect("Users","Register",$_POST);
             }
         }
     }

@@ -1,21 +1,23 @@
 <?php
 class UsersModel extends BaseModel{
     
-    public function login(string $usernameOrEmail, string $password){
+    public function login(){
         $statement = self::$db->prepare("SELECT id, password_hash FROM users WHERE username = ?");
-        $statement->bind_param("s",$usernameOrEmail);
+        $statement->bind_param("s",$_POST[FORM_USERNAME]);
         $statement->execute();
-        $result = $statement->get_result()->fetch_assoc();
-        
-        if($result &&
-            key_exists('id',$result) &&
-            key_exists('password_hash',$result)){
+        return $statement;
+    }
 
-            if(password_verify($result['password_hash'],hash(DEFAULT_HASH_ALGORITHM,$password))){
-
-                return $result['id'];
-            }
-        }
-        return false;
+    public function register(){
+        $statement = self::$db->prepare("INSERT INTO users (username, password_hash, first_name, last_name, email)"
+                                        . "VALUES (?,?,?,?,?)");
+        $statement->bind_param("sssss",
+            $_POST[FORM_USERNAME],
+            $_POST[FORM_PASSWORD],
+            $_POST[FORM_FIRST_NAME],
+            $_POST[FORM_LAST_NAME],
+            $_POST[FORM_EMAIL]);
+        $statement->execute();
+        return $statement;
     }
 }

@@ -18,22 +18,23 @@ if(key_exists("post-query",$_SESSION)){
     if(key_exists(FORM_LAST_NAME,$data)){
         $fillLastName = $data[FORM_LAST_NAME];
     }
+    unset($_SESSION['post-query']);
 }
 ?>
 
 
 <form class="register-form" method="post">
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username"<?php if($fillUsername) : ?> value="<?= $fillUsername; endif ?>">
+    <input type="text" required="required" id="username" name="username"<?php if($fillUsername) : ?> value="<?= $fillUsername; endif ?>">
     <label for="password">Password:</label>
-    <input type="password" id="password" name="password">
+    <input type="password" required="required" id="password" name="password">
     <label for="confirm-password">Confirm password:</label>
-    <input type="password" id="confirm-password" name="confirm-password">
+    <input type="password" required="required" id="confirm-password" name="confirm-password">
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email"<?php if($fillEmail) : ?> value="<?= $fillEmail; endif ?>">
+    <input type="email" required="required" id="email" name="email"<?php if($fillEmail) : ?> value="<?= $fillEmail; endif ?>">
     <label for="first-name">First name:</label>
-    <input type="text" id="first-name" name="first-name"<?php if($fillFirstNAme) : ?> value="<?= $fillFirstNAme; endif ?>">
+    <input type="text" required="required" id="first-name" name="first-name"<?php if($fillFirstNAme) : ?> value="<?= $fillFirstNAme; endif ?>">
     <label for="last-name">Surname:</label>
-    <input type="text" id="last-name" name="last-name"<?php if($fillLastName) : ?> value="<?= $fillLastName; endif ?>">
+    <input type="text" required="required" id="last-name" name="last-name"<?php if($fillLastName) : ?> value="<?= $fillLastName; endif ?>">
     <input type="submit" value="submit">
 </form>

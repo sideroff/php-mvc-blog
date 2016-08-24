@@ -4,6 +4,10 @@ body > header, footer{
     min-height: 50px;
     min-width: 100px;
 }
+
+body>header>a, body>footer>a {
+    margin:10px;
+}
 body > footer{
     text-align: center;
 }
