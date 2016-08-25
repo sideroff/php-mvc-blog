@@ -5,6 +5,7 @@ unset($_SESSION['statement']);
 
 <h1><?=$statement['username']?>'s profile</h1>
 
+<div class="avatar">Avatar: <img src="<?= APP_ROOT . "/" . $statement['avatar_path'] ?>" alt="avatar.png"</div>
 <div class="first-name">First Name: <?= $statement['first_name'] ?></div>
 <div class="first-name">Last Name: <?= $statement['last_name'] ?></div>
 <div class="first-name">Email: <?= $statement['email'] ?></div>

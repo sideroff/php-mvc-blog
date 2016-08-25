@@ -4,15 +4,12 @@ class UsersController extends BaseController
 {
     public function profile($params){
         $username = $params[0];
-        $statement = $this->model->getDataForUsername($username);
+        $statement = $this->model->profile($username);
         if($statement->error){
             $this->addMessage("Something's wrong!" . $statement->error,self::$errorMsg);
             $this->redirect("Home");
         }
-        $_SESSION['statement'] = $statement;
-        
-        
-        
+        $_SESSION['statement'] = $statement;        
     }
     
     public function register(){

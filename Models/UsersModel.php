@@ -23,8 +23,12 @@ class UsersModel extends BaseModel{
         return $statement;
     }
     
-    public function getDataForUsername($username){
-        $statement = self::$db->prepare("SELECT username, first_name, last_name, email FROM users WHERE username = ?");
+    public function profile($username){
+        $statement = self::$db->prepare(
+            "SELECT users.id, username, first_name, last_name, email, date_registered, avatars.path AS avatar_path " .
+            "FROM users, avatars " .
+            "WHERE username = ? " .
+            "AND users.avatar_id = avatars.id");
         $statement->bind_param("s",$username);
         $statement->execute();
         

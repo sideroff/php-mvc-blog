@@ -10,6 +10,7 @@ define('DB_NAME', 'new_blog');
 
 
 define('DEFAULT_HASH_ALGORITHM', 'sha256');
+define('DEFAULT_AVATAR_PATH', APP_ROOT . '/content/avatars/default.png');
 
 //form ids
 define('FORM_USERNAME', 'username');
