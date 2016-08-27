@@ -13,6 +13,7 @@ define('DEFAULT_HASH_ALGORITHM', 'sha256');
 define('AVATARS_DEFAULT', APP_ROOT . '/content/avatars/default.png');
 define('AVATARS_PATH', APP_ROOT . '/content/avatars/');
 define('AVATARS_ALLOWED_TYPES', ['img', 'png', 'jpg', 'jpeg']);
+define('AVATARS_MAX_SIZE', 500000);
 //form ids
 define('FORM_USERNAME', 'username');
 define('FORM_PASSWORD', 'password');

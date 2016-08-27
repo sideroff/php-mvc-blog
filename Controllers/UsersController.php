@@ -10,49 +10,39 @@ class UsersController extends BaseController
                 $this->redirect("Home");
             }
 
-
-
-
-
-
             $file_name = basename($_FILES['avatar']['name']);
             $file_type = pathinfo(AVATARS_PATH . $file_name, PATHINFO_EXTENSION);
 
             if(getimagesize($_FILES['avatar']['tmp_name'])==false){
                 $this->addMessage('File is not an image',self::$errorMsg);
-                $this->redirect("Users","profile");
+                $this->redirect("Users","profile",[$_SESSION['username']]);
             }
-            if(file_exists(AVATARS_PATH . $file_name)){
-                unlink(AVATARS_PATH . $file_name);
-                $this->addMessage("Your old avatar has been deleted!", self::$infoMsg);
+            if($_FILES['avatar']['size'] > AVATARS_MAX_SIZE){
+                $this->addMessage("File should be no bigger than ". AVATARS_MAX_SIZE/1000 . " kB.",self::$errorMsg);
+                $this->redirect("Users","profile",[$_SESSION['username']]);
             }
-            move_uploaded_file($_FILES["avatar"]["tmp_name"], "../" . AVATARS_PATH . $_SESSION['userId'] . "." . $file_type);
-            
-            
-            die();
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            $this->model->changeAvatar();
+
+            $success = $this->model->changeAvatar($file_name, $file_type);
+
+            if($success){
+                $this->addMessage("Your avatar has been changed!" , self::$infoMsg);
+            }
+            else{
+                $this->addMessage("Something went wrong while proccessing your request. Please try again.",self::$errorMsg);
+            }
+            $this->redirect("Users","profile",[$_SESSION['username']]);
         }
         else{
-            $username = $params[0];
+            if($params && count($params)>0){
+                $username = $params[0];
+            }
+            else if($_SESSION && key_exists('username',$_SESSION)){
+                $username = $_SESSION['username'];
+            }
+            else{
+                $this->addMessage("Specify a profile", self::$errorMsg);
+                $this->redirect("Home");
+            }
             $statement = $this->model->profile($username);
             if($statement->error){
                 $this->addMessage("Something's wrong!" . $statement->error,self::$errorMsg);

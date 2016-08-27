@@ -34,8 +34,13 @@ class UsersModel extends BaseModel{
         return $statement;
     }
 
-    public function changeAvatar(){
-        //no need to check $_SESSION because we already did so in the controller controllaaa controla
+    public function changeAvatar(string $file_name, string $file_type){
+
+        if(file_exists(AVATARS_PATH . $file_name)){
+            unlink(AVATARS_PATH . $file_name);
+        }
+        $success = move_uploaded_file($_FILES["avatar"]["tmp_name"], "../" . AVATARS_PATH . $_SESSION['userId'] . "." . $file_type);
         
+        return $success;
     }
 }
