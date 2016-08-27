@@ -3,13 +3,63 @@
 class UsersController extends BaseController
 {
     public function profile($params){
-        $username = $params[0];
-        $statement = $this->model->profile($username);
-        if($statement->error){
-            $this->addMessage("Something's wrong!" . $statement->error,self::$errorMsg);
-            $this->redirect("Home");
+        if($this->isPost){
+            $this->checkSession();
+            if(!$this->isLoggedIn){
+                $this->addMessage("Action forbidden! Log in first!", self::$errorMsg);
+                $this->redirect("Home");
+            }
+
+
+
+
+
+
+            $file_name = basename($_FILES['avatar']['name']);
+            $file_type = pathinfo(AVATARS_PATH . $file_name, PATHINFO_EXTENSION);
+
+            if(getimagesize($_FILES['avatar']['tmp_name'])==false){
+                $this->addMessage('File is not an image',self::$errorMsg);
+                $this->redirect("Users","profile");
+            }
+            if(file_exists(AVATARS_PATH . $file_name)){
+                unlink(AVATARS_PATH . $file_name);
+                $this->addMessage("Your old avatar has been deleted!", self::$infoMsg);
+            }
+            move_uploaded_file($_FILES["avatar"]["tmp_name"], "../" . AVATARS_PATH . $_SESSION['userId'] . "." . $file_type);
+            
+            
+            die();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            $this->model->changeAvatar();
         }
-        $_SESSION['statement'] = $statement;        
+        else{
+            $username = $params[0];
+            $statement = $this->model->profile($username);
+            if($statement->error){
+                $this->addMessage("Something's wrong!" . $statement->error,self::$errorMsg);
+                $this->redirect("Home");
+            }
+            $_SESSION['statement'] = $statement;
+        }     
     }
     
     public function register(){
@@ -60,7 +110,7 @@ class UsersController extends BaseController
                 " characters long.", self::$errorMsg);
             $shouldRedirect=true;
         }
-        
+
         //password
         if(!preg_match(PASSWORD_REGEX,$_POST[FORM_PASSWORD])){
             $this->addMessage("Password should contain 1 lowercase letter, 1 uppercase letter, 1 digit, 1 special character, and be between"
@@ -72,7 +122,7 @@ class UsersController extends BaseController
             $this->addMessage("Password and confirm password fields do not match.",self::$errorMsg);
             $shouldRedirect=true;
         }
-        
+
         //email
         if(!preg_match(EMAIL_REGEX,$_POST[FORM_EMAIL])){
             $this->addMessage("Please enter a valid email.",self::$errorMsg);

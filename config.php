@@ -6,12 +6,13 @@ define('APP_ROOT' , '/blog');
 define('DB_HOST', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'new_blog');
+define('DB_NAME', 'gosho');
 
 
 define('DEFAULT_HASH_ALGORITHM', 'sha256');
-define('DEFAULT_AVATAR_PATH', APP_ROOT . '/content/avatars/default.png');
-
+define('AVATARS_DEFAULT', APP_ROOT . '/content/avatars/default.png');
+define('AVATARS_PATH', APP_ROOT . '/content/avatars/');
+define('AVATARS_ALLOWED_TYPES', ['img', 'png', 'jpg', 'jpeg']);
 //form ids
 define('FORM_USERNAME', 'username');
 define('FORM_PASSWORD', 'password');
@@ -34,4 +35,3 @@ define('FIRST_NAME_MAX_LENGTH', 40);
 define('LAST_NAME_MIN_LENGTH', 2);
 define('LAST_NAME_MAX_LENGTH', 40);
 
-?>

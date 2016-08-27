@@ -27,6 +27,7 @@ abstract class BaseController
         }
         $this->action = $action;
     }
+    
     public function renderView(string $viewName = null, bool $includeLayout = true){
         if($viewName==null){
             $viewName=$this->action;

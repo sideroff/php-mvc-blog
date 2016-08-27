@@ -22,16 +22,20 @@ class UsersModel extends BaseModel{
         
         return $statement;
     }
-    
-    public function profile($username){
+
+        public function profile(string $username){
         $statement = self::$db->prepare(
-            "SELECT users.id, username, first_name, last_name, email, date_registered, avatars.path AS avatar_path " .
-            "FROM users, avatars " .
-            "WHERE username = ? " .
-            "AND users.avatar_id = avatars.id");
+            "SELECT users.id, username, first_name, last_name, email, date_registered " .
+            "FROM users " .
+            "WHERE username = ? ");
         $statement->bind_param("s",$username);
         $statement->execute();
         
         return $statement;
+    }
+
+    public function changeAvatar(){
+        //no need to check $_SESSION because we already did so in the controller controllaaa controla
+        
     }
 }
