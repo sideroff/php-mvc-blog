@@ -8,13 +8,12 @@
         </tr>
 
         <?php
-        var_dump($_SESSION);
         foreach ($this->posts as $post) : ?>
             <tr>
                 <td><?=$post['title']?></td>
                 <td><?=$post['content']?></td>
-                <td><?=$post['date']?></td>
-                <td><?=$post['author_id']?></td>
+                <td><?=$post['date_created']?></td>
+                <td><a href="<?=APP_ROOT?>/users/profile/<?=$post['username']?>"><?=$post['username']?></a></td>
             </tr>
         <?php endforeach ?>
     </table>

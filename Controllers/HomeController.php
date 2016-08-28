@@ -6,6 +6,7 @@ class HomeController extends BaseController
         if(count($params)==0){
             $params[0] = NULL;
         }
-        $this->posts = $this->model->GetLastPosts($params[0]);
+        $this->posts = $this->model->GetLastPosts();
+        
     }
 }

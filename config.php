@@ -21,7 +21,8 @@ define('FORM_FIRST_NAME', 'first-name');
 define('FORM_LAST_NAME', 'last-name');
 define('FORM_EMAIL', 'email');
 define('FORM_CONFIRM_PASSWORD', 'confirm-password');
-
+define('FORM_POST_CONTENT','content');
+define('FORM_POST_TITLE','title');
 //form field restrictions
 define('USERNAME_MIN_LENGTH', 5);
 define('USERNAME_MAX_LENGTH', 18);
