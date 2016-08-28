@@ -1,4 +1,5 @@
 <main>
+    <h2>Latest posts</h2>
     <table class="posts">
         <tr>
             <th>Title</th>

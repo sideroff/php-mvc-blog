@@ -14,7 +14,7 @@ class PostsModel extends BaseModel
         $content = $_POST[FORM_POST_CONTENT];
         
         $statement = self::$db->prepare("INSERT INTO `posts` (`title`, `content`,`author_id`) VALUES (?,?,?)");
-        $statement->bind_param("ssd", $title, $content,$_SESSION['userId']);
+        $statement->bind_param("ssi", $title, $content,$_SESSION['userId']);
         $statement->execute();
         
         return $statement;        

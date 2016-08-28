@@ -8,11 +8,11 @@
  */
 class HomeModel extends BaseModel
 {
-    public function GetLastPosts(int $count = NULL) : array {
+    public function GetLastPosts(int $count = NULL) {
         $shouldBindParam = false;
         $query= "SELECT title,content,author_id, date_created, username FROM posts LEFT JOIN users ON posts.author_id = users.id ORDER BY posts.date_created DESC";
         if($count!=NULL){
-            $query = $query ."LIMIT ?";
+            $query = $query ." LIMIT ?";
             $shouldBindParam = true;
         }
 
@@ -22,7 +22,7 @@ class HomeModel extends BaseModel
             $statement->bind_param("i", $count);
         }
         $statement->execute();
-        $result = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
-        return $result;
+
+        return $statement;
     }
 }

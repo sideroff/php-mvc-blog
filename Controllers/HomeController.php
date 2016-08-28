@@ -6,7 +6,12 @@ class HomeController extends BaseController
         if(count($params)==0){
             $params[0] = NULL;
         }
-        $this->posts = $this->model->GetLastPosts();
+        $statement = $this->model->GetLastPosts(NUMBER_OF_POSTS_ON_HOME_INDEX);
+        if($statement->error) {
+            require_once "../Views/_layout/internal-error.php";
+            die();
+        }
+        $this->posts = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
         
     }
 }
