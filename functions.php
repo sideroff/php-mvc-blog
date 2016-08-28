@@ -41,12 +41,17 @@ function parseURL(string $url){
         $controller = new $controllerClassName($controllerName,$actionName);
     }
     else {
-        die("Controller '$controllerName' not found!");
+        require_once "Views/_layout/page-not-found.php";
+        die();
     }
 
     if(method_exists($controller,$actionName) && is_callable(array($controller,$actionName))){
         $controller->$actionName($params);
         $controller->renderView();
+    }
+    else{
+        require_once "Views/_layout/page-not-found.php";
+        die();
     }
 }
 
