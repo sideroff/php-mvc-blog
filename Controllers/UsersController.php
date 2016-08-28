@@ -173,16 +173,5 @@ class UsersController extends BaseController
         }
     }
     
-    private function checkSession(){
-        if(isset($_SESSION) && 
-            count($_SESSION)>0 &&
-            key_exists('username', $_SESSION) &&
-            key_exists('userId',$_SESSION)){
-            
-            $this->isLoggedIn = true;
-            return;
-        }
-        $this->isLoggedIn = false;
-    }
 
 }

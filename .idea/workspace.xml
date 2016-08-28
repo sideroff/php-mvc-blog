@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37474e21-e65c-4e58-81c1-326056e99311" name="Default" comment="" />
+    <list default="true" id="37474e21-e65c-4e58-81c1-326056e99311" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/BaseController.php" afterPath="$PROJECT_DIR$/Controllers/BaseController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/PostsController.php" afterPath="$PROJECT_DIR$/Controllers/PostsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/UsersController.php" afterPath="$PROJECT_DIR$/Controllers/UsersController.php" />
+    </list>
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -25,10 +29,15 @@
       <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/BaseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="30" column="84" selection-start-line="30" selection-start-column="84" selection-end-line="30" selection-end-column="84" />
+            <state relative-caret-position="102">
+              <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
               <folding>
                 <element signature="n#__construct#0;n#BaseController#0;n#!!top" expanded="false" />
+                <element signature="n#renderView#0;n#BaseController#0;n#!!top" expanded="false" />
+                <element signature="n#redirectToUrl#0;n#BaseController#0;n#!!top" expanded="false" />
+                <element signature="n#redirect#0;n#BaseController#0;n#!!top" expanded="false" />
+                <element signature="n#addMessage#0;n#BaseController#0;n#!!top" expanded="false" />
+                <element signature="n#checkSession#0;n#BaseController#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -37,24 +46,25 @@
       <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="113" column="9" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
+            <state relative-caret-position="34">
+              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
               <folding>
                 <element signature="n#profile#0;n#UsersController#0;n#!!top" expanded="false" />
+                <element signature="n#register#0;n#UsersController#0;n#!!top" expanded="false" />
                 <element signature="n#login#0;n#UsersController#0;n#!!top" expanded="false" />
                 <element signature="n#logout#0;n#UsersController#0;n#!!top" expanded="false" />
+                <element signature="n#checkRegistrationData#0;n#UsersController#0;n#!!top" expanded="false" />
                 <element signature="n#checkIfLoggedIn#0;n#UsersController#0;n#!!top" expanded="false" />
-                <element signature="n#checkSession#0;n#UsersController#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostsController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PostsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Controllers/PostsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+            <state relative-caret-position="204">
+              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -107,7 +117,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/posts/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
@@ -168,22 +178,22 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/content/styles.css" />
         <option value="$PROJECT_DIR$/functions.php" />
-        <option value="$PROJECT_DIR$/Controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/content/scripts.js" />
         <option value="$PROJECT_DIR$/Models/UsersModel.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/Views/users/login.php" />
         <option value="$PROJECT_DIR$/Views/users/register.php" />
-        <option value="$PROJECT_DIR$/Controllers/PostsController.php" />
         <option value="$PROJECT_DIR$/Views/posts/create.php" />
         <option value="$PROJECT_DIR$/Views/_layout/header.php" />
         <option value="$PROJECT_DIR$/Models/PostsModel.php" />
         <option value="$PROJECT_DIR$/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/Models/HomeModel.php" />
         <option value="$PROJECT_DIR$/Views/home/index.php" />
-        <option value="$PROJECT_DIR$/Controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/Views/users/profile.php" />
         <option value="$PROJECT_DIR$/Views/posts/index.php" />
+        <option value="$PROJECT_DIR$/Controllers/UsersController.php" />
+        <option value="$PROJECT_DIR$/Controllers/BaseController.php" />
+        <option value="$PROJECT_DIR$/Controllers/PostsController.php" />
       </list>
     </option>
   </component>
@@ -482,18 +492,18 @@
       <workItem from="1472235039836" duration="11909000" />
       <workItem from="1472300414080" duration="8487000" />
       <workItem from="1472326511973" duration="6356000" />
-      <workItem from="1472407170428" duration="3567000" />
+      <workItem from="1472407170428" duration="3880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137786000" />
+    <option name="totallyTimeSpent" value="138099000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16105418" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16105418" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -800,14 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/PostsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Models/PostsModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -845,30 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="30" column="84" selection-start-line="30" selection-start-column="84" selection-end-line="30" selection-end-column="84" />
-          <folding>
-            <element signature="n#__construct#0;n#BaseController#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="113" column="9" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
-          <folding>
-            <element signature="n#profile#0;n#UsersController#0;n#!!top" expanded="false" />
-            <element signature="n#login#0;n#UsersController#0;n#!!top" expanded="false" />
-            <element signature="n#logout#0;n#UsersController#0;n#!!top" expanded="false" />
-            <element signature="n#checkIfLoggedIn#0;n#UsersController#0;n#!!top" expanded="false" />
-            <element signature="n#checkSession#0;n#UsersController#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/users/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -891,6 +869,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+          <folding>
+            <element signature="n#profile#0;n#UsersController#0;n#!!top" expanded="false" />
+            <element signature="n#register#0;n#UsersController#0;n#!!top" expanded="false" />
+            <element signature="n#login#0;n#UsersController#0;n#!!top" expanded="false" />
+            <element signature="n#logout#0;n#UsersController#0;n#!!top" expanded="false" />
+            <element signature="n#checkRegistrationData#0;n#UsersController#0;n#!!top" expanded="false" />
+            <element signature="n#checkIfLoggedIn#0;n#UsersController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+          <folding>
+            <element signature="n#__construct#0;n#BaseController#0;n#!!top" expanded="false" />
+            <element signature="n#renderView#0;n#BaseController#0;n#!!top" expanded="false" />
+            <element signature="n#redirectToUrl#0;n#BaseController#0;n#!!top" expanded="false" />
+            <element signature="n#redirect#0;n#BaseController#0;n#!!top" expanded="false" />
+            <element signature="n#addMessage#0;n#BaseController#0;n#!!top" expanded="false" />
+            <element signature="n#checkSession#0;n#BaseController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/PostsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
           <folding />
         </state>
       </provider>
