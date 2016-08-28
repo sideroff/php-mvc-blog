@@ -15,8 +15,8 @@ if(key_exists("post-query",$_SESSION)){
 ?>
 
 <form class="create-post" method="post" xmlns="http://www.w3.org/1999/html">
-    <div><label for="<?=FORM_POST_TITLE?>"><input type="text" name="<?=FORM_POST_TITLE?>" id="<?=FORM_POST_TITLE?>" <?php if($fillTitle) : ?> value="<?= $fillTitle; endif ?> "></label></div>
-    <div><label for="<?=FORM_POST_CONTENT?>"><textarea
+    <div><label for="<?=FORM_POST_TITLE?>">Title</label><input type="text" name="<?=FORM_POST_TITLE?>" id="<?=FORM_POST_TITLE?>" <?php if($fillTitle) : ?> value="<?= $fillTitle; endif ?> "></div>
+    <div><label for="<?=FORM_POST_CONTENT?>">Content</label><textarea
                 name="<?=FORM_POST_CONTENT?>"
                 id="<?=FORM_POST_CONTENT?>"></textarea>
         </label>

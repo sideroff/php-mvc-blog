@@ -12,6 +12,7 @@ body > footer{
     text-align: center;
 }
 
+
 body > table > th, td {
     padding: 10px;
 }
@@ -44,7 +45,6 @@ td {
 .errorMessage {
     background: #ff3300;
 }
-
 .latest-user {
     display:inline-block;
     background: #DDD;

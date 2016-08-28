@@ -24,17 +24,17 @@ if(key_exists("post-query",$_SESSION)){
 
 
 <form class="register-form" method="post">
-    <label for="<?=FORM_USERNAME?>">Username:</label>
-    <input type="text" required="required" id="<?=FORM_USERNAME?>" name="<?=FORM_USERNAME?>"<?php if($fillUsername) : ?> value="<?= $fillUsername; endif ?>">
-    <label for="<?=FORM_PASSWORD?>">Password:</label>
-    <input type="password" required="required" id="<?=FORM_PASSWORD?>" name="<?=FORM_PASSWORD?>">
-    <label for="<?=FORM_CONFIRM_PASSWORD?>">Confirm password:</label>
-    <input type="password" required="required" id="<?=FORM_CONFIRM_PASSWORD?>" name="<?=FORM_CONFIRM_PASSWORD?>">
-    <label for="<?=FORM_EMAIL?>">Email:</label>
-    <input type="email" required="required" id="<?=FORM_EMAIL?>" name="<?=FORM_EMAIL?>"<?php if($fillEmail) : ?> value="<?= $fillEmail; endif ?>">
-    <label for="<?=FORM_FIRST_NAME?>">First name:</label>
-    <input type="text" required="required" id="<?=FORM_FIRST_NAME?>" name="<?=FORM_FIRST_NAME?>"<?php if($fillFirstNAme) : ?> value="<?= $fillFirstNAme; endif ?>">
-    <label for="<?=FORM_LAST_NAME?>">Surname:</label>
-    <input type="text" required="required" id="<?=FORM_LAST_NAME?>" name="<?=FORM_LAST_NAME?>"<?php if($fillLastName) : ?> value="<?= $fillLastName; endif ?>">
-    <input type="submit" value="submit">
+    <div><label for="<?=FORM_USERNAME?>">Username:</label>
+    <input type="text" required="required" id="<?=FORM_USERNAME?>" name="<?=FORM_USERNAME?>"<?php if($fillUsername) : ?> value="<?= $fillUsername; endif ?>"></div>
+    <div><label for="<?=FORM_PASSWORD?>">Password:</label>
+    <input type="password" required="required" id="<?=FORM_PASSWORD?>" name="<?=FORM_PASSWORD?>"></div>
+    <div><label for="<?=FORM_CONFIRM_PASSWORD?>">Confirm password:</label>
+    <input type="password" required="required" id="<?=FORM_CONFIRM_PASSWORD?>" name="<?=FORM_CONFIRM_PASSWORD?>"></div>
+    <div><label for="<?=FORM_EMAIL?>">Email:</label>
+    <input type="email" required="required" id="<?=FORM_EMAIL?>" name="<?=FORM_EMAIL?>"<?php if($fillEmail) : ?> value="<?= $fillEmail; endif ?>"></div>
+    <div><label for="<?=FORM_FIRST_NAME?>">First name:</label>
+    <input type="text" required="required" id="<?=FORM_FIRST_NAME?>" name="<?=FORM_FIRST_NAME?>"<?php if($fillFirstNAme) : ?> value="<?= $fillFirstNAme; endif ?>"></div>
+    <div><label for="<?=FORM_LAST_NAME?>">Last name:</label>
+    <input type="text" required="required" id="<?=FORM_LAST_NAME?>" name="<?=FORM_LAST_NAME?>"<?php if($fillLastName) : ?> value="<?= $fillLastName; endif ?>"></div>
+    <div><input type="submit" value="submit"></div>
 </form>
