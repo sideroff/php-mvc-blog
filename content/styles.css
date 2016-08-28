@@ -45,3 +45,10 @@ td {
     background: #ff3300;
 }
 
+.latest-user {
+    display:inline-block;
+    background: #DDD;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 2px;
+}
