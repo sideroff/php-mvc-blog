@@ -10,7 +10,7 @@ class PostsController extends BaseController
         $this->checkSession();
         if(!$this->isLoggedIn){
             $this->addMessage("You must be logged in first!", self::$errorMsg);
-            $this->redirect("Users","register");
+            $this->redirect("Users","login");
         }
         var_dump($_POST);
         if($this->isPost){
