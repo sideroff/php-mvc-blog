@@ -48,7 +48,12 @@ class UsersController extends BaseController
                 $this->addMessage("Something's wrong!" . $statement->error,self::$errorMsg);
                 $this->redirect("Home");
             }
-            $_SESSION['statement'] = $statement;
+            $result = $statement->get_result()->fetch_assoc();
+            if($result==null){
+                $this->addMessage("No such user found!",self::$errorMsg);
+                $this->redirect("Home");
+            }
+            $_SESSION['statement'] = $result ;
         }     
     }
     

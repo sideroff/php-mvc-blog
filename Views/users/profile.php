@@ -1,5 +1,5 @@
 <?php
-$statement = $_SESSION['statement']->get_result()->fetch_assoc();
+$statement = $_SESSION['statement'];
 unset($_SESSION['statement']);
 ?>
 
