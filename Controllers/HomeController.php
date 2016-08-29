@@ -8,7 +8,7 @@ class HomeController extends BaseController
         if(count($params)==0){
             $params[0] = NULL;
         }
-        $statement = $this->model->getLastPosts(NUMBER_OF_POSTS_ON_HOME_INDEX);
+        $statement = $this->model->getPosts(NUMBER_OF_POSTS_ON_HOME_INDEX);
         $this->checkStatement($statement);
         $this->posts = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
 
