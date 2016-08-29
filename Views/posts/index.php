@@ -1,8 +1,12 @@
 <?php
-    if(isset($_SESSION['statement'])){
-        $statement = $_SESSION['statement'];
-        unset($_SESSION['statement']);
+    if(isset($_SESSION['statement']['post'])){
+        $statement = $_SESSION['statement']['post'];
+        unset($_SESSION['statement']['post']);
     }
+    if(isset($_SESSION['statement']['comments'])){
+        $comments = $_SESSION['statement']['comments'];
+        unset($_SESSION['statement']['comments']);
+}
 ?>
 
 <div class="post-data" >
@@ -11,3 +15,29 @@
     <div class="author">Author:<i> <?= $statement['username'] ?></i></div>
     <div class="date">Date created: <i><?= $statement['date_created']?></i> </div>
 </div>
+
+<hr>
+
+<?php if($_SESSION && key_exists('username',$_SESSION)) : ?>
+
+    <form class="write-comment-form"  method="post">
+        <div><label for="content"><h2>Write comment:</h2></label></div>
+        <div><textarea name="content" id="content" cols="45" rows="5"></textarea></div>
+        <input type="submit" value="Comment!">
+    </form>
+<?php endif; ?>
+<div class="comment-section"></div>
+<hr>
+<h2>Comments:</h2>
+
+<?php
+    if(isset($comments)) {
+        echo '<div class="individual-comments-wrapper">';
+
+
+         foreach($comments as $comment) : ?>
+            <div class="individual-comment">
+            <?=$comment['content']?>
+             <div>Posted on: <i><?=$comment['date']?></i></div>
+            <div>From: <a href="<?= APP_ROOT. "/users/profile/". $comment['author_id']?>"> <?=$comment['username']?></div></a></div>
+        <?php endforeach; echo '</div>'; }?>

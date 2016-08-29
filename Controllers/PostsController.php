@@ -3,6 +3,7 @@
 class PostsController extends BaseController
 {
     private $currentPostId;
+
     public function index($params=null){
         if($params && count($params)>0){
             $this->currentPostId = $params[0];
@@ -11,6 +12,53 @@ class PostsController extends BaseController
             $this->addMessage("No id of post supplied!",self::$errorMsg);
             $this->redirect("Posts","all");
         }
+        //--- IF POSTING 
+        if($this->isPost){
+            $this->checkSession();
+            if(!$this->isLoggedIn){
+                $this->addMessage("Action prohibited! Log in first!",self::$errorMsg);
+                $this->redirect("Posts","index",[$this->currentPostId]);
+            }
+            if($_POST && key_exists('content',$_POST) && strlen($_POST['content'])>=5){
+                $statement = $this->model->comment($this->currentPostId);
+                
+                if($statement->error){
+                    $this->addMessage("Something went wrong while proccessing your request! " . $statement->error,self::$errorMsg);
+                }
+                else{
+                    $this->addMessage("Your comment has been posted!", self::$successMsg);
+                }                
+            }
+            else{
+                $this->addMessage("Please fill comment with atleast 5 symbols!",self::$errorMsg);
+            }
+            $this->redirect("Posts","index",[$this->currentPostId]);
+        }
+        
+        //---GET POST
+        $statement = $this->model->getPostById($this->currentPostId);
+        if($statement->error){
+            $this->addMessage("Something went wrong while proccessing your reqeust! ".$statement->error, self::$errorMsg);
+            $this->redirect("Posts","all");
+        }
+        $post = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
+        if(count($post)==0){
+            $this->addMessage("No post with such id found", self::$errorMsg);
+            $this->redirect("Posts","all");
+        }
+        
+        //---GET COMMENTS
+        $statement = $this->model->getComments($this->currentPostId);
+        if($statement->error){
+            $this->addMessage("Something went wrong while retrieving comments! " . $statement->error,self::$errorMsg);
+            $this->redirect("Posts","index",$this->currentPostId);
+        }
+        $comments = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
+        $_SESSION['statement']['post'] = $post[0];
+        $_SESSION['statement']['comments'] = $comments;
+    }
+
+    public function edit(){
         if($this->isPost){
             $title=null;
             $content=null;
@@ -35,19 +83,6 @@ class PostsController extends BaseController
                 $this->redirect("Posts","index",[$this->currentPostId]);
             }
         }
-
-        $statement = $this->model->getPostById($this->currentPostId);
-        if($statement->error){
-            $this->addMessage("Something went wrong while proccessing your reqeust! ".$statement->error, self::$errorMsg);
-            $this->redirect("Posts","all");
-        }
-        $result = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
-        if(count($result)==0){
-            $this->addMessage("No post with such id found", self::$errorMsg);
-            $this->redirect("Posts","all");
-        }
-
-        $_SESSION['statement'] = $result[0];
     }
 
     public function create(){

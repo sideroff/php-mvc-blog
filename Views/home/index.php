@@ -20,5 +20,5 @@
             </tr>
         <?php endforeach ?>
     </table>
-    <span class="latest-user">Say hi to our latest user: <a href="<?=APP_ROOT?>/users/profile/<?=$this->latestUserRegisteredUsername?>"><?=$this->latestUserRegisteredUsername?></span>
+    <span class="latest-user">Say hi to our latest user: <a href="<?=APP_ROOT?>/users/profile/<?=$this->latestUserRegisteredUsername?>"><?=$this->latestUserRegisteredUsername?></a></span>
 </main>
