@@ -67,7 +67,14 @@ class PostsController extends BaseController
                 $this->addMessage("Please fill all fields in order to submit the post!", self::$errorMsg);
                 $this->redirect("Posts","create");
             }
-            $this->model->create();
+            $statement = $this->model->create();
+            if($statement->error){
+                $this->addMessage("Something went wrong while proccessing your request! " . $statement->error, self::$errorMsg);
+                $this->redirect("Posts","create");
+            }
+            $this->addMessage("Your post has been submitted!",self::$successMsg);
+            $id=$statement->insert_id;
+            $this->redirect("Posts","index",[$id]);
         }
     }
 

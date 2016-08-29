@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37474e21-e65c-4e58-81c1-326056e99311" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/Controllers/HomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/PostsController.php" afterPath="$PROJECT_DIR$/Controllers/PostsController.php" />
     </list>
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +27,8 @@
       <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="166" column="39" selection-start-line="166" selection-start-column="38" selection-end-line="166" selection-end-column="39" />
+            <state relative-caret-position="245">
+              <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -95,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostsController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PostsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Controllers/PostsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+            <state relative-caret-position="449">
+              <caret line="74" column="81" selection-start-line="74" selection-start-column="81" selection-end-line="74" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -110,7 +110,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-              <folding />
+              <folding>
+                <marker date="1472463855477" expanded="true" signature="161:452" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,11 +139,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+            <state relative-caret-position="272">
+              <caret line="16" column="70" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -194,8 +196,8 @@
         <option value="$PROJECT_DIR$/Models/BaseModel.php" />
         <option value="$PROJECT_DIR$/Models/PostsModel.php" />
         <option value="$PROJECT_DIR$/Views/posts/index.php" />
-        <option value="$PROJECT_DIR$/Controllers/PostsController.php" />
         <option value="$PROJECT_DIR$/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/Controllers/PostsController.php" />
       </list>
     </option>
   </component>
@@ -476,12 +478,12 @@
       <workItem from="1472235039836" duration="11909000" />
       <workItem from="1472300414080" duration="8487000" />
       <workItem from="1472326511973" duration="6356000" />
-      <workItem from="1472407170428" duration="12588000" />
+      <workItem from="1472407170428" duration="12966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146807000" />
+    <option name="totallyTimeSpent" value="147185000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -808,14 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="166" column="39" selection-start-line="166" selection-start-column="38" selection-end-line="166" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Models/UsersModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -844,34 +838,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/PostsModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding>
-            <marker date="1472461904799" expanded="true" signature="134:221" ph="UPDATE `post... " />
-            <marker date="1472461904799" expanded="true" signature="422:529" ph="SELECT title... posts" />
-            <marker date="1472461904799" expanded="true" signature="422:534" ph="SELECT title... posts" />
-            <marker date="1472461904799" expanded="true" signature="422:552" ph="SELECT title... posts" />
-            <marker date="1472461904799" expanded="true" signature="422:744" ph="SELECT title... posts" />
-            <marker date="1472461904799" expanded="true" signature="893:960" ph="INSERT INTO posts... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/posts/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/PostsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
-          <folding />
+          <folding>
+            <marker date="1472463855477" expanded="true" signature="161:452" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -887,8 +860,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        <state relative-caret-position="272">
+          <caret line="16" column="70" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/PostsModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding>
+            <marker date="1472461904799" expanded="true" signature="134:221" ph="UPDATE `post... " />
+            <marker date="1472461904799" expanded="true" signature="422:529" ph="SELECT title... posts" />
+            <marker date="1472461904799" expanded="true" signature="422:534" ph="SELECT title... posts" />
+            <marker date="1472461904799" expanded="true" signature="422:552" ph="SELECT title... posts" />
+            <marker date="1472461904799" expanded="true" signature="422:744" ph="SELECT title... posts" />
+            <marker date="1472461904799" expanded="true" signature="893:960" ph="INSERT INTO posts... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/PostsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="74" column="81" selection-start-line="74" selection-start-column="81" selection-end-line="74" selection-end-column="81" />
           <folding />
         </state>
       </provider>
