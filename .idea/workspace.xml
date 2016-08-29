@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37474e21-e65c-4e58-81c1-326056e99311" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/PostsController.php" afterPath="$PROJECT_DIR$/Controllers/PostsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/BaseModel.php" afterPath="$PROJECT_DIR$/Models/BaseModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/home/index.php" afterPath="$PROJECT_DIR$/Views/home/index.php" />
     </list>
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controllers/BaseController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+            <state relative-caret-position="194">
+              <caret line="93" column="43" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -38,29 +50,9 @@
         <entry file="file://$PROJECT_DIR$/Models/BaseModel.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="143">
-              <caret line="22" column="162" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="162" />
+              <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
               <folding>
-                <marker date="1472461292122" expanded="true" signature="522:666" ph="SELECT title... posts" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsersModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Models/UsersModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="28" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="28" />
-              <folding>
-                <marker date="1472305976465" expanded="true" signature="117:142" ph="SELECT * fro... " />
-                <marker date="1472305976465" expanded="true" signature="117:171" ph="SELECT * FRO... users" />
-                <marker date="1472305976465" expanded="true" signature="381:453" ph="INSERT INTO users... " />
-                <marker date="1472305976465" expanded="true" signature="381:454" ph="INSERT INTO users... " />
-                <marker date="1472305976465" expanded="true" signature="381:516" ph="INSERT INTO users... " />
-                <marker date="1472305976465" expanded="true" signature="381:517" ph="INSERT INTO users... " />
-                <marker date="1472305976465" expanded="true" signature="381:518" ph="INSERT INTO users... " />
-                <marker date="1472305976465" expanded="true" signature="916:923" ph="SELECT (firs... users" />
-                <marker date="1472305976465" expanded="true" signature="916:1053" ph="SELECT id, u... users" />
+                <marker date="1472465041071" expanded="true" signature="522:684" ph="SELECT posts... posts" />
               </folding>
             </state>
           </provider>
@@ -95,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PostsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/PostsController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="449">
@@ -129,21 +121,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
               <caret line="16" column="70" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Views/home/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -181,23 +173,23 @@
         <option value="$PROJECT_DIR$/Models/UsersModel.php" />
         <option value="$PROJECT_DIR$/Views/users/login.php" />
         <option value="$PROJECT_DIR$/Views/users/profile.php" />
-        <option value="$PROJECT_DIR$/Controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/Views/_layout/page-not-found.php" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/Views/_layout/internal-error.php" />
         <option value="$PROJECT_DIR$/Controllers/BaseController.php" />
-        <option value="$PROJECT_DIR$/Views/home/index.php" />
         <option value="$PROJECT_DIR$/content/styles.css" />
         <option value="$PROJECT_DIR$/Views/users/register.php" />
         <option value="$PROJECT_DIR$/Views/_layout/header.php" />
         <option value="$PROJECT_DIR$/Views/posts/create.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/Models/HomeModel.php" />
-        <option value="$PROJECT_DIR$/Models/BaseModel.php" />
         <option value="$PROJECT_DIR$/Models/PostsModel.php" />
         <option value="$PROJECT_DIR$/Views/posts/index.php" />
         <option value="$PROJECT_DIR$/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/Controllers/PostsController.php" />
+        <option value="$PROJECT_DIR$/Controllers/UsersController.php" />
+        <option value="$PROJECT_DIR$/Models/BaseModel.php" />
+        <option value="$PROJECT_DIR$/Views/home/index.php" />
       </list>
     </option>
   </component>
@@ -478,12 +470,12 @@
       <workItem from="1472235039836" duration="11909000" />
       <workItem from="1472300414080" duration="8487000" />
       <workItem from="1472326511973" duration="6356000" />
-      <workItem from="1472407170428" duration="12966000" />
+      <workItem from="1472407170428" duration="13490000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147185000" />
+    <option name="totallyTimeSpent" value="147709000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -718,14 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/home/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/content/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="478">
@@ -776,14 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="852">
-          <caret line="58" column="72" selection-start-line="58" selection-start-column="72" selection-end-line="58" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -797,16 +773,6 @@
         <state relative-caret-position="193">
           <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/HomeModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding>
-            <marker date="1472459666100" expanded="true" signature="132:196" ph="SELECT usern... users" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -848,24 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/BaseModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="22" column="162" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="162" />
-          <folding>
-            <marker date="1472461292122" expanded="true" signature="522:666" ph="SELECT title... posts" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="70" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Models/PostsModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -881,18 +829,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/PostsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
           <caret line="74" column="81" selection-start-line="74" selection-start-column="81" selection-end-line="74" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="93" column="43" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/HomeModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding>
+            <marker date="1472459666100" expanded="true" signature="132:196" ph="SELECT usern... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="70" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/BaseModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+          <folding>
+            <marker date="1472465041071" expanded="true" signature="522:684" ph="SELECT posts... posts" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/home/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
           <folding />
         </state>
       </provider>

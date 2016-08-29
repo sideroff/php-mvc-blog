@@ -20,7 +20,7 @@ class BaseModel
     }
     
     public function getPosts(int $limit = NULL) {
-        $query= "SELECT title,content,author_id, date_created, username FROM posts LEFT JOIN users ON posts.author_id = users.id ORDER BY posts.date_created DESC";
+        $query= "SELECT posts.id AS id, title, content, author_id, date_created, username FROM posts LEFT JOIN users ON posts.author_id = users.id ORDER BY posts.date_created DESC";
 
         return $this->executeQuery($query, $limit);
     }
