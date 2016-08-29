@@ -2,11 +2,26 @@
 
 class PostsModel extends BaseModel
 {
-    public function getPosts() {
-        $statement = self::$db->query("SELECT title,content,author_id, date_created, username   FROM posts LEFT JOIN users ON posts.author_id = users.id ORDER BY posts.date_created DESC");
-        $result=$statement->fetch_all(MYSQLI_ASSOC);
+    
+    public function index($title,$content){
+        $statement = self::$db->prepare("UPDATE `posts` ".
+            "SET `title`= ?,`content`= ? ".
+            "WHERE id = ? ");
         
-        return $result;
+        $statement->bind_param("ss",$title,$content);
+        $statement->execute();
+        
+        return $statement;
+    }
+    public function getPostById(int $id){
+        $query = "SELECT title,content,author_id, date_created, username FROM posts LEFT JOIN users ON posts.author_id = users.id WHERE posts.id = ?";
+        $statement = self::$db->prepare($query);
+
+        $statement->bind_param("i",$id);
+        $statement->execute();
+        
+        return $statement;
+
     }
     
     public function create(){
