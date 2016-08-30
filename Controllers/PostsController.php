@@ -54,6 +54,22 @@ class PostsController extends BaseController
             $this->redirect("Posts","index",$this->currentPostId);
         }
         $comments = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
+        
+        foreach($comments as &$comment){
+            $statement = $this->model->getVotesForComment(true,$comment['comment_id']);
+            if($statement->error){
+                continue;
+            }
+            $upvotes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
+            $comment['upvotes'] = $upvotes;
+
+            $statement = $this->model->getVotesForComment(false,$comment['comment_id']);
+            if($statement->error){
+                continue;
+            }
+            $downvotes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
+            $comment['downvotes'] = $downvotes;
+        }
         $_SESSION['statement']['post'] = $post[0];
         $_SESSION['statement']['comments'] = $comments;
     }

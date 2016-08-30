@@ -16,29 +16,42 @@
     <div class="date">Date created: <i><?= $statement['date_created']?></i> </div>
 </div>
 
-<hr>
 
 <?php if($_SESSION && key_exists('username',$_SESSION)) : ?>
 
+    <hr>
     <form class="write-comment-form"  method="post">
         <div><label for="content"><h2>Write comment:</h2></label></div>
         <div><textarea name="content" id="content" cols="45" rows="5"></textarea></div>
         <input type="submit" value="Comment!">
     </form>
 <?php endif; ?>
+
 <div class="comment-section"></div>
-<hr>
-
-
 <?php
     if(isset($comments) && count($comments)>0) {
+        echo '<hr>';
         echo '<h2>Comments:</h2>';
         echo '<div class="individual-comments-wrapper">';
 
 
          foreach($comments as $comment) : ?>
             <div class="individual-comment">
-            <?=$comment['content']?>
-             <div>Posted on: <i><?=$comment['date']?></i></div>
-            <div>From: <a href="<?= APP_ROOT. "/users/profile/". $comment['author_id']?>"> <?=$comment['username']?></div></a></div>
+                <?=$comment['content']?>
+                <div>Posted on: <i><?=$comment['date']?></i></div>
+                <div>From: <a href="<?= APP_ROOT. "/users/profile/". $comment['author_id']?>"> <?=$comment['username']?></a></div>
+                <div>Upvotes: <?=count($comment['upvotes'])?></div>
+                <div>Downvotes: <?=count($comment['downvotes'])?></div>
+            </div>
         <?php endforeach; echo '</div>'; }?>
+
+
+
+
+
+
+
+
+
+
+
