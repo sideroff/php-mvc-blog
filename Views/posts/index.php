@@ -10,7 +10,7 @@
 ?>
 
 <div class="post-data" >
-    <div class="title"><h2><?= $statement['title'] ?></h2></div>
+    <div class="title"><h1><?= $statement['title'] ?></h1></div>
     <div class="content"><?= $statement['content'] ?></div>
     <div class="author">Author:<i> <?= $statement['username'] ?></i></div>
     <div class="date">Date created: <i><?= $statement['date_created']?></i> </div>
@@ -28,10 +28,11 @@
 <?php endif; ?>
 <div class="comment-section"></div>
 <hr>
-<h2>Comments:</h2>
+
 
 <?php
-    if(isset($comments)) {
+    if(isset($comments) && count($comments)>0) {
+        echo '<h2>Comments:</h2>';
         echo '<div class="individual-comments-wrapper">';
 
 

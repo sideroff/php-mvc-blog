@@ -9,11 +9,9 @@ function parseURL(string $url){
     $url = substr($url,strlen(APP_ROOT . "/"));
     $urlParts = array_values(array_filter(explode('/',$url)));
 
-    //default:
-    //TODO PUT DEFAULT VALUES IN CONFIG
     
-    $controllerName = "home";
-    $actionName = "index";
+    $controllerName = DEFAULT_CONTROLLER;
+    $actionName = DEFAULT_ACTION;
     $params = [];
 
     //if we have atleast 1 that must be controller name
@@ -32,12 +30,6 @@ function parseURL(string $url){
 
     if(class_exists($controllerName . "controller")){
         $controllerClassName = $controllerName . "controller";
-        //if class exists: init it with given params if any
-
-        //TODO remove this
-        echo("controller: " . $controllerName . " action: " . $actionName);
-
-
         $controller = new $controllerClassName($controllerName,$actionName);
     }
     else {

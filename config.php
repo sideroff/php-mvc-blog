@@ -8,7 +8,8 @@ define('DB_USERNAME', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'gosho');
 
-
+define('DEFAULT_CONTROLLER', 'home');
+define('DEFAULT_ACTION','index');
 define('DEFAULT_HASH_ALGORITHM', 'sha256');
 define('AVATARS_DEFAULT', APP_ROOT . '/content/avatars/default.png');
 define('AVATARS_PATH', APP_ROOT . '/content/avatars/');

@@ -80,13 +80,18 @@ class UsersController extends BaseController
             }
             else{
                 $result = $statement->get_result()->fetch_assoc();
-                $_SESSION['userId'] = $result['id'];
-                $_SESSION['username'] = $username;
-                $this->addMessage("Login successful!",self::$successMsg);
-                $this->redirect("Home");
+            }
+            $pass_hashed= hash(DEFAULT_HASH_ALGORITHM,$password);
+            if($pass_hashed != $result['password_hash']){
+                $this->addMessage("Login failed, password does not match!" . $statement->error, self::$errorMsg);
+                $this->redirect("Users","Login");
+            }
+            $_SESSION['userId'] = $result['id'];
+            $_SESSION['username'] = $username;
+            $this->addMessage("Login successful!",self::$successMsg);
+            $this->redirect("Home");
             }
         }
-    }
 
     public function logout(){
         session_destroy();
