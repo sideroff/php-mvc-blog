@@ -6,11 +6,8 @@ function parseURL(string $url){
     if($gosho != APP_ROOT . "/") {
         die('APP_ROOT IS NOT CORRECT, SHOULD BE blog');
     }
-    echo $url;
     $url = substr($url,strlen(APP_ROOT . "/"));
     $urlParts = array_values(array_filter(explode('/',$url)));
-    echo "<br>";
-    echo $url;
     
     $controllerName = DEFAULT_CONTROLLER;
     $actionName = DEFAULT_ACTION;

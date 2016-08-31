@@ -39,5 +39,39 @@ function vote(boolVote, comment_id, voter_id, url) {
             voter_id: voter_id
         }
     }).done(function( msg ) {
+        objects = msg.split("|");
+        upvotes = JSON.parse(objects[0]);
+        downvotes = JSON.parse(objects[1]);
+
+        upvotes_length = upvotes.length;
+        downvotes_length = downvotes.length;
+
+        if(upvotes_length == undefined){
+            upvotes_length=0;
+        }
+        if(downvotes_length == undefined){
+            downvotes_length=0;
+        }
+
+        if(upvotes['user_voted']){
+            $.each( upvotes, function() {
+                upvotes_length++;
+            });
+            upvotes_length--;
+            $("#"+comment_id+".upvote").prop('disabled', true);
+            $("#"+comment_id+".downvote").prop('disabled', false);
+        }
+        else if(downvotes['user_voted']){
+            $.each( downvotes, function() {
+                downvotes_length++;
+            });
+
+            downvotes_length--;
+            $("#"+comment_id+".downvote").prop('disabled', true);
+            $("#"+comment_id+".upvote").prop('disabled', false);
+        }
+
+        $("#"+comment_id+".upvotes").html(upvotes_length);
+        $("#"+comment_id+".downvotes").html(downvotes_length)
     })
 }

@@ -18,4 +18,13 @@ class VotesModel extends BaseModel
 
         return $statement;
     }
+
+    public function getVotesForComment(bool $upOrDownVote,int $commentId){
+        $statement = self::$db->prepare("SELECT * FROM comment_votes WHERE comment_votes.value=? AND comment_votes.comment_id = ?");
+        $val = intval($upOrDownVote);
+        $statement->bind_param("ii", $val,$commentId);
+        $statement->execute();
+
+        return $statement;
+    }
 }

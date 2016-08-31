@@ -35,19 +35,19 @@
         echo '<div class="individual-comments-wrapper">';
 
 
-         foreach($comments as $comment) : var_dump($comment)?>
+         foreach($comments as $comment) : ?>
              
             <div class="individual-comment">
                 <?=$comment['content']?>
                 <div>Posted on: <i><?=$comment['date']?></i></div>
                 <div>From: <a href="<?= APP_ROOT. "/users/profile/". $comment['author_id']?>"> <?=$comment['username']?></a></div>
                 <div>
-                    <button class="upvote" onclick='vote(true,<?php echo $comment['comment_id']?>,<?php echo $_SESSION['userId']?>,"<?php echo VOTECONTROLLER_URL ?>")'>^</button>
-                    <?=count($comment['upvotes'])?>
+                    <button class="upvote" id="<?php echo $comment['comment_id']?>" onclick='vote(true,<?php echo $comment['comment_id']?>,<?php echo $_SESSION['userId']?>,"<?php echo VOTECONTROLLER_URL ?>")'>^</button>
+                    <span class="upvotes" id="<?php echo $comment['comment_id']?>"><?=count($comment['upvotes'])?></span>
                 </div>
                 <div>
-                    <button class="downvote" onclick='vote(false,<?php echo $comment['comment_id']?>,<?php echo $_SESSION['userId']?>,"<?php echo VOTECONTROLLER_URL ?>")'>v</button>
-                    <?=count($comment['downvotes'])?>
+                    <button class="downvote" id="<?php echo $comment['comment_id']?>" onclick='vote(false,<?php echo $comment['comment_id']?>,<?php echo $_SESSION['userId']?>,"<?php echo VOTECONTROLLER_URL ?>")'>v</button>
+                    <span class="downvotes" id="<?php echo $comment['comment_id']?>"><?=count($comment['downvotes'])?></span>
                 </div>
 
 
