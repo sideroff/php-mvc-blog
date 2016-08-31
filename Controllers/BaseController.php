@@ -17,7 +17,6 @@ abstract class BaseController
     public function __construct(string $controllerName, string $action){
         $this->controllerName = $controllerName;
         $modelName = $controllerName . "Model";
-        
         if($_SERVER["REQUEST_METHOD"]=="POST") {
             $this->isPost = true;
         }        
@@ -28,7 +27,7 @@ abstract class BaseController
         $this->action = $action;
     }
     
-    public function renderView(string $viewName = null, bool $includeLayout = true){
+    public function renderView(string $viewName = null, bool $includeLayout = true, bool $includePath = true){
         if($viewName==null){
             $viewName=$this->action;
         }
@@ -37,7 +36,9 @@ abstract class BaseController
         if($includeLayout){
             include("Views/_layout/header.php");
         }
-        include($path);
+        if($includePath){
+            include($path);
+        }
         if($includeLayout){
             include("Views/_layout/footer.php");
         }

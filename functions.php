@@ -6,9 +6,11 @@ function parseURL(string $url){
     if($gosho != APP_ROOT . "/") {
         die('APP_ROOT IS NOT CORRECT, SHOULD BE blog');
     }
+    echo $url;
     $url = substr($url,strlen(APP_ROOT . "/"));
     $urlParts = array_values(array_filter(explode('/',$url)));
-
+    echo "<br>";
+    echo $url;
     
     $controllerName = DEFAULT_CONTROLLER;
     $actionName = DEFAULT_ACTION;
@@ -39,7 +41,13 @@ function parseURL(string $url){
 
     if(method_exists($controller,$actionName) && is_callable(array($controller,$actionName))){
         $controller->$actionName($params);
-        $controller->renderView();
+        if($controllerName=="votes"){
+
+            $controller->renderView(null,false,false);
+            return;
+        }
+
+        $controller->renderView(null);
     }
     else{
         require_once "Views/_layout/page-not-found.php";

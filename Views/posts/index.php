@@ -35,13 +35,22 @@
         echo '<div class="individual-comments-wrapper">';
 
 
-         foreach($comments as $comment) : ?>
+         foreach($comments as $comment) : var_dump($comment)?>
+             
             <div class="individual-comment">
                 <?=$comment['content']?>
                 <div>Posted on: <i><?=$comment['date']?></i></div>
                 <div>From: <a href="<?= APP_ROOT. "/users/profile/". $comment['author_id']?>"> <?=$comment['username']?></a></div>
-                <div>Upvotes: <?=count($comment['upvotes'])?></div>
-                <div>Downvotes: <?=count($comment['downvotes'])?></div>
+                <div>
+                    <button class="upvote" onclick='vote(true,<?php echo $comment['comment_id']?>,<?php echo $_SESSION['userId']?>,"<?php echo VOTECONTROLLER_URL ?>")'>^</button>
+                    <?=count($comment['upvotes'])?>
+                </div>
+                <div>
+                    <button class="downvote" onclick='vote(false,<?php echo $comment['comment_id']?>,<?php echo $_SESSION['userId']?>,"<?php echo VOTECONTROLLER_URL ?>")'>v</button>
+                    <?=count($comment['downvotes'])?>
+                </div>
+
+
             </div>
         <?php endforeach; echo '</div>'; }?>
 

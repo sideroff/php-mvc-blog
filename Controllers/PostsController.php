@@ -63,11 +63,11 @@ class PostsController extends BaseController
             $upvotes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
             $comment['upvotes'] = $upvotes;
 
-            $statement = $this->model->getVotesForComment(false,$comment['comment_id']);
-            if($statement->error){
+            $newStatement = $this->model->getVotesForComment(false,$comment['comment_id']);
+            if($newStatement->error){
                 continue;
             }
-            $downvotes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
+            $downvotes = $newStatement->get_result()->fetch_all(MYSQLI_ASSOC);
             $comment['downvotes'] = $downvotes;
         }
         $_SESSION['statement']['post'] = $post[0];

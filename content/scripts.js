@@ -27,3 +27,17 @@ $(document).ready(function() {
     })
 
 });
+
+function vote(boolVote, comment_id, voter_id, url) {
+    $.ajax({
+        type: "POST",
+        url: url,
+        data:
+        {
+            boolVote: boolVote,
+            comment_id: comment_id,
+            voter_id: voter_id
+        }
+    }).done(function( msg ) {
+    })
+}
