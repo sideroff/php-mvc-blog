@@ -72,7 +72,7 @@ class UsersController extends BaseController
         if ($this->isPost) {
             $username = $_POST[FORM_USERNAME];
             $password = $_POST[FORM_PASSWORD];
-            $statement = $this->model->login($username, $password);
+            $statement = $this->model->login($username);
             
             if($statement->error) {
                 $this->addMessage("Login failed" . $statement->error, self::$errorMsg);
@@ -157,6 +157,7 @@ class UsersController extends BaseController
             $this->redirect("Users","Register");
         }
         else{
+            $originalPass=$_POST[FORM_PASSWORD];
             $_POST[FORM_PASSWORD] = hash(DEFAULT_HASH_ALGORITHM,$_POST[FORM_PASSWORD]);
             $statement = $this->model->register();
             
@@ -169,6 +170,7 @@ class UsersController extends BaseController
             else{
                 $this->addMessage("Registration successful!",self::$successMsg);
                 $this->isPost=true;
+                $_POST[FORM_PASSWORD] = $originalPass;
                 $this->login();
             }
         }

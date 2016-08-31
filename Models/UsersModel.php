@@ -1,9 +1,9 @@
 <?php
 class UsersModel extends BaseModel{
     
-    public function login(){
+    public function login($username){
         $statement = self::$db->prepare("SELECT id, password_hash FROM users WHERE username = ?");
-        $statement->bind_param("s",$_POST[FORM_USERNAME]);
+        $statement->bind_param("s",$username);
         $statement->execute();
         
         return $statement;
