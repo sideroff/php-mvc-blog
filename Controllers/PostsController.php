@@ -9,7 +9,7 @@ class PostsController extends BaseController
         $this->checkStatement($statement);
         $this->posts = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
     }
-
+    
     public function index($params=null){
         if($params && count($params)>0){
             $this->currentPostId = $params[0];
@@ -27,20 +27,20 @@ class PostsController extends BaseController
             }
             if($_POST && key_exists('content',$_POST) && strlen($_POST['content'])>=5){
                 $statement = $this->model->comment($this->currentPostId);
-                
+
                 if($statement->error){
                     $this->addMessage("Something went wrong while proccessing your request! " . $statement->error,self::$errorMsg);
                 }
                 else{
                     $this->addMessage("Your comment has been posted!", self::$successMsg);
-                }                
+                }
             }
             else{
                 $this->addMessage("Please fill comment with atleast 5 symbols!",self::$errorMsg);
             }
             $this->redirect("Posts","index",[$this->currentPostId]);
         }
-        
+
         //---GET POST
         $statement = $this->model->getPostById($this->currentPostId);
         if($statement->error){
@@ -52,7 +52,7 @@ class PostsController extends BaseController
             $this->addMessage("No post with such id found", self::$errorMsg);
             $this->redirect("Posts","all");
         }
-        
+
         //---GET COMMENTS
         $statement = $this->model->getComments($this->currentPostId);
         if($statement->error){
@@ -60,7 +60,7 @@ class PostsController extends BaseController
             $this->redirect("Posts","index",$this->currentPostId);
         }
         $comments = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
-        
+
         foreach($comments as &$comment){
             $statement = $this->model->getVotesForComment(true,$comment['comment_id']);
             if($statement->error){
@@ -79,6 +79,34 @@ class PostsController extends BaseController
         $_SESSION['statement']['post'] = $post[0];
         $_SESSION['statement']['comments'] = $comments;
     }
+
+    public function create(){
+        $this->checkSession();
+        if(!$this->isLoggedIn){
+            $this->addMessage("You must be logged in first!", self::$errorMsg);
+            $this->redirect("Users","login");
+        }
+        var_dump($_POST);
+        if($this->isPost){
+            if(!$_POST ||
+                !key_exists(FORM_POST_TITLE, $_POST) ||
+                !key_exists(FORM_POST_CONTENT,$_POST) ||
+                strlen($_POST[FORM_POST_TITLE])<1 ||
+                strlen($_POST[FORM_POST_CONTENT])<1){
+                $_SESSION['post-query'] = $_POST;
+                $this->addMessage("Please fill all fields in order to submit the post!", self::$errorMsg);
+                $this->redirect("Posts","create");
+            }
+            $statement = $this->model->create();
+            if($statement->error){
+                $this->addMessage("Something went wrong while proccessing your request! " . $statement->error, self::$errorMsg);
+                $this->redirect("Posts","create");
+            }
+            $this->addMessage("Your post has been submitted!",self::$successMsg);
+            $id=$statement->insert_id;
+            $this->redirect("Posts","index",[$id]);
+        }
+    }    
 
     public function edit($params = null){
         if($params && count($params)>0){
@@ -132,33 +160,46 @@ class PostsController extends BaseController
             $this->redirect("Posts","index",[$this->currentPostId]);
         }
     }
+    
+    public function delete($params = null){
+        if($params && count($params)>0){
+            $this->currentPostId = $params[0];
+        }
+        else{
+            $this->addMessage("No id of post supplied!",self::$errorMsg);
+            $this->redirect("Posts","all");
+        }
 
-    public function create(){
+        $statement = $this->model->getPostById($this->currentPostId);
+        if($statement->error){
+            $this->addMessage("Something went wrong while getting post! ".$statement->error, self::$errorMsg);
+            $this->redirect("Posts","all");
+        }
+        $post = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
+        if(count($post)==0){
+            $this->addMessage("No post with such id found", self::$errorMsg);
+            $this->redirect("Posts","all");
+        }
+        $post= $post[0];
         $this->checkSession();
-        if(!$this->isLoggedIn){
-            $this->addMessage("You must be logged in first!", self::$errorMsg);
-            $this->redirect("Users","login");
+        if(!($this->isLoggedIn) || $post['username']!=$_SESSION['username']){
+            $this->addMessage("Action prohibited!", self::$errorMsg);
+            $this->redirect("Posts","all");
         }
-        var_dump($_POST);
+        $_SESSION['post'] = $post;
+        
         if($this->isPost){
-            if(!$_POST || 
-                !key_exists(FORM_POST_TITLE, $_POST) ||
-                !key_exists(FORM_POST_CONTENT,$_POST) ||
-                strlen($_POST[FORM_POST_TITLE])<1 ||
-                strlen($_POST[FORM_POST_CONTENT])<1){
-                $_SESSION['post-query'] = $_POST;
-                $this->addMessage("Please fill all fields in order to submit the post!", self::$errorMsg);
-                $this->redirect("Posts","create");
-            }
-            $statement = $this->model->create();
+            $statement = $this->model->delete($this->currentPostId);
             if($statement->error){
-                $this->addMessage("Something went wrong while proccessing your request! " . $statement->error, self::$errorMsg);
-                $this->redirect("Posts","create");
+                $this->addMessage("Something went wrong while deleting post! ".$statement->error, self::$errorMsg);
             }
-            $this->addMessage("Your post has been submitted!",self::$successMsg);
-            $id=$statement->insert_id;
-            $this->redirect("Posts","index",[$id]);
+            else{
+                $this->addMessage("Post deleted sucessfully!",self::$infoMsg);
+            }
+            $this->redirect("Posts","all");
         }
+        
     }
+
 
 }
