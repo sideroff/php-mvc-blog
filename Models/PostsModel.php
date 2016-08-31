@@ -34,6 +34,7 @@ class PostsModel extends BaseModel
 
         return $statement;
     }
+
     public function comment($postId){
         $content = $_POST['content'];
         $statement = self::$db->prepare("INSERT INTO `comments` (`content`, `post_id`,`author_id`) VALUES (?,?,?)");
@@ -53,8 +54,6 @@ class PostsModel extends BaseModel
         return $statement;
 
     }
-
-
 
     public function getComments($postId){
         $statement = self::$db->prepare("SELECT comments.id AS comment_id, content, date, username, author_id FROM comments LEFT JOIN users ON comments.author_id = users.id WHERE comments.post_id = ? ORDER BY `date` DESC");

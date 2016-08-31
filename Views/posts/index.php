@@ -54,7 +54,12 @@
                     <button class="downvote" id="<?php echo $comment['comment_id']?>" onclick='vote(false,<?php echo $comment['comment_id']?>,<?php echo $_SESSION['userId']?>,"<?php echo VOTECONTROLLER_URL ?>")'>v</button>
                     <span class="downvotes" id="<?php echo $comment['comment_id']?>"><?=count($comment['downvotes'])?></span>
                 </div>
-
+                <?php
+                if($comment['username'] == $_SESSION['username']) : ?>
+                    <div>
+                        <a href="<?php echo APP_ROOT.'/comments/delete/'.$comment['comment_id']?>" class="edit-post" id="<?php echo $statement['post_id']?>">Delete comment!</a>
+                    </div>
+                <?php endif ?>
 
             </div>
         <?php endforeach; echo '</div>'; }?>

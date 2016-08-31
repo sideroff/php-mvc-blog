@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37474e21-e65c-4e58-81c1-326056e99311" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/PostsController.php" afterPath="$PROJECT_DIR$/Controllers/PostsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/PostsModel.php" afterPath="$PROJECT_DIR$/Models/PostsModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/home/index.php" afterPath="$PROJECT_DIR$/Views/home/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/posts/delete.php" afterPath="$PROJECT_DIR$/Views/posts/delete.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/posts/index.php" afterPath="$PROJECT_DIR$/Views/posts/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
     </list>
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,68 +30,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controllers/UsersController.php">
+      <file leaf-file-name="PostsModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/PostsModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="172" column="54" selection-start-line="172" selection-start-column="54" selection-end-line="172" selection-end-column="54" />
+            <state relative-caret-position="170">
+              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
               <folding>
-                <element signature="n#logout#0;n#UsersController#0;n#!!top" expanded="false" />
+                <element signature="n#create#0;n#PostsModel#0;n#!!top" expanded="false" />
+                <element signature="n#edit#0;n#PostsModel#0;n#!!top" expanded="false" />
+                <element signature="n#delete#0;n#PostsModel#0;n#!!top" expanded="false" />
+                <element signature="n#comment#0;n#PostsModel#0;n#!!top" expanded="false" />
+                <element signature="n#getPostById#0;n#PostsModel#0;n#!!top" expanded="false" />
+                <element signature="n#getComments#0;n#PostsModel#0;n#!!top" expanded="false" />
+                <element signature="n#getVotesForComment#0;n#PostsModel#0;n#!!top" expanded="false" />
+                <marker date="1472662937282" expanded="true" signature="204:271" ph="INSERT INTO `posts`... " />
+                <marker date="1472662937282" expanded="true" signature="818:853" ph="DELETE FROM " />
+                <marker date="1472662937282" expanded="true" signature="818:892" ph="DELETE FROM " />
+                <marker date="1472662937282" expanded="true" signature="1122:1194" ph="INSERT INTO `comments`... " />
+                <marker date="1472662937282" expanded="true" signature="1403:1553" ph="SELECT posts... posts" />
+                <marker date="1472662937282" expanded="true" signature="1805:1984" ph="SELECT comme... " />
+                <marker date="1472662937282" expanded="true" signature="2224:2312" ph="SELECT * FRO... comment_votes" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/scripts.js">
+      <file leaf-file-name="CommentsModel.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Models/CommentsModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+            <state relative-caret-position="272">
+              <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+              <folding>
+                <marker date="1472663981662" expanded="true" signature="432:480" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostsModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Models/PostsModel.php">
+      <file leaf-file-name="CommentsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controllers/CommentsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="n#create#0;n#PostsModel#0;n#!!top" expanded="false" />
-                <element signature="n#edit#0;n#PostsModel#0;n#!!top" expanded="false" />
-                <element signature="n#comment#0;n#PostsModel#0;n#!!top" expanded="false" />
-                <element signature="n#getPostById#0;n#PostsModel#0;n#!!top" expanded="false" />
-                <element signature="n#getComments#0;n#PostsModel#0;n#!!top" expanded="false" />
-                <element signature="n#getVotesForComment#0;n#PostsModel#0;n#!!top" expanded="false" />
-                <marker date="1472659646064" expanded="true" signature="204:271" ph="INSERT INTO `posts`... " />
-                <marker date="1472659646064" expanded="true" signature="818:853" ph="DELETE FROM " />
-                <marker date="1472659646064" expanded="true" signature="818:892" ph="DELETE FROM " />
-                <marker date="1472659646064" expanded="true" signature="1121:1193" ph="INSERT INTO `comments`... " />
-                <marker date="1472659646064" expanded="true" signature="1402:1552" ph="SELECT posts... posts" />
-                <marker date="1472659646064" expanded="true" signature="1806:1985" ph="SELECT comme... " />
-                <marker date="1472659646064" expanded="true" signature="2225:2313" ph="SELECT * FRO... comment_votes" />
-              </folding>
+            <state relative-caret-position="319">
+              <caret line="34" column="80" selection-start-line="34" selection-start-column="80" selection-end-line="34" selection-end-column="80" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Models/UsersModel.php">
+      <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/comments/delete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-              <folding>
-                <marker date="1472656638945" expanded="true" signature="126:151" ph="SELECT * fro... " />
-                <marker date="1472656638945" expanded="true" signature="126:180" ph="SELECT * FRO... users" />
-                <marker date="1472656638945" expanded="true" signature="378:450" ph="INSERT INTO users... " />
-                <marker date="1472656638945" expanded="true" signature="378:451" ph="INSERT INTO users... " />
-                <marker date="1472656638945" expanded="true" signature="378:513" ph="INSERT INTO users... " />
-                <marker date="1472656638945" expanded="true" signature="378:514" ph="INSERT INTO users... " />
-                <marker date="1472656638945" expanded="true" signature="378:515" ph="INSERT INTO users... " />
-                <marker date="1472656638945" expanded="true" signature="913:920" ph="SELECT (firs... users" />
-                <marker date="1472656638945" expanded="true" signature="913:1050" ph="SELECT id, u... users" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" column="81" selection-start-line="5" selection-start-column="81" selection-end-line="5" selection-end-column="81" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,9 +101,9 @@
         <entry file="file://$PROJECT_DIR$/Views/posts/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+              <caret line="59" column="72" selection-start-line="59" selection-start-column="72" selection-end-line="59" selection-end-column="72" />
               <folding>
-                <marker date="1472657120838" expanded="true" signature="2388:2483" ph="..." />
+                <marker date="1472662899561" expanded="true" signature="2388:2483" ph="..." />
               </folding>
             </state>
           </provider>
@@ -120,11 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PostsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/PostsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="196" column="60" selection-start-line="196" selection-start-column="60" selection-end-line="196" selection-end-column="60" />
+            <state relative-caret-position="20">
+              <caret line="164" column="43" selection-start-line="164" selection-start-column="42" selection-end-line="164" selection-end-column="43" />
               <folding>
                 <element signature="n#all#0;n#PostsController#0;n#!!top" expanded="false" />
                 <element signature="n#index#0;n#PostsController#0;n#!!top" expanded="false" />
@@ -139,7 +138,7 @@
         <entry file="file://$PROJECT_DIR$/Views/posts/delete.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="83" selection-start-line="6" selection-start-column="83" selection-end-line="6" selection-end-column="83" />
+              <caret line="6" column="83" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -150,16 +149,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="482">
               <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/posts/edit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -203,7 +192,6 @@
         <option value="$PROJECT_DIR$/Views/_layout/header.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/Models/VotesModel.php" />
-        <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/Controllers/VotesController.php" />
         <option value="$PROJECT_DIR$/content/scripts.js" />
         <option value="$PROJECT_DIR$/Views/posts/edit.php" />
@@ -212,11 +200,15 @@
         <option value="$PROJECT_DIR$/Views/posts/all.php" />
         <option value="$PROJECT_DIR$/Models/UsersModel.php" />
         <option value="$PROJECT_DIR$/Controllers/UsersController.php" />
-        <option value="$PROJECT_DIR$/Views/posts/index.php" />
         <option value="$PROJECT_DIR$/Views/home/index.php" />
         <option value="$PROJECT_DIR$/Views/posts/delete.php" />
-        <option value="$PROJECT_DIR$/Models/PostsModel.php" />
         <option value="$PROJECT_DIR$/Controllers/PostsController.php" />
+        <option value="$PROJECT_DIR$/functions.php" />
+        <option value="$PROJECT_DIR$/Views/posts/index.php" />
+        <option value="$PROJECT_DIR$/Models/PostsModel.php" />
+        <option value="$PROJECT_DIR$/Views/comments/delete.php" />
+        <option value="$PROJECT_DIR$/Controllers/CommentsController.php" />
+        <option value="$PROJECT_DIR$/Models/CommentsModel.php" />
       </list>
     </option>
   </component>
@@ -294,10 +286,6 @@
               <option name="myItemId" value="Views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -331,21 +319,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Views" />
+              <option name="myItemId" value="comments" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -422,14 +396,14 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ivans\PhpstormProjects\blog\Controllers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\blog\content" />
       <recent name="C:\xampp\htdocs\blog\images" />
       <recent name="C:\xampp\htdocs\blog\Views" />
       <recent name="C:\xampp\htdocs\blog\Views\_layout" />
+      <recent name="C:\Users\ivans\PhpstormProjects\blog\Controllers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ivans\PhpstormProjects\blog\Controllers" />
     </key>
   </component>
@@ -499,12 +473,12 @@
       <workItem from="1472563703112" duration="2300000" />
       <workItem from="1472632075182" duration="15864000" />
       <workItem from="1472654737755" duration="315000" />
-      <workItem from="1472656924117" duration="2026000" />
+      <workItem from="1472656924117" duration="6222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190448000" />
+    <option name="totallyTimeSpent" value="194644000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -544,20 +518,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/content/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/page1.php" />
-    <entry file="file://$PROJECT_DIR$/Controllers/page2.php" />
     <entry file="file://$PROJECT_DIR$/Views/PostsView.php" />
     <entry file="file://$PROJECT_DIR$/Views/HomeView.php" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core.php">
@@ -724,14 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Models/VotesModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -841,14 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/users/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/home/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -857,55 +806,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/posts/index.php">
+    <entry file="file://$PROJECT_DIR$/Views/users/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-          <folding>
-            <marker date="1472657120838" expanded="true" signature="2388:2483" ph="..." />
-          </folding>
+        <state relative-caret-position="482">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/posts/delete.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="83" selection-start-line="6" selection-start-column="83" selection-end-line="6" selection-end-column="83" />
+          <caret line="6" column="83" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/PostsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="164" column="43" selection-start-line="164" selection-start-column="42" selection-end-line="164" selection-end-column="43" />
+          <folding>
+            <element signature="n#all#0;n#PostsController#0;n#!!top" expanded="false" />
+            <element signature="n#index#0;n#PostsController#0;n#!!top" expanded="false" />
+            <element signature="n#create#0;n#PostsController#0;n#!!top" expanded="false" />
+            <element signature="n#edit#0;n#PostsController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/posts/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="59" column="72" selection-start-line="59" selection-start-column="72" selection-end-line="59" selection-end-column="72" />
+          <folding>
+            <marker date="1472662899561" expanded="true" signature="2388:2483" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/comments/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="81" selection-start-line="5" selection-start-column="81" selection-end-line="5" selection-end-column="81" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Models/PostsModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
           <folding>
             <element signature="n#create#0;n#PostsModel#0;n#!!top" expanded="false" />
             <element signature="n#edit#0;n#PostsModel#0;n#!!top" expanded="false" />
+            <element signature="n#delete#0;n#PostsModel#0;n#!!top" expanded="false" />
             <element signature="n#comment#0;n#PostsModel#0;n#!!top" expanded="false" />
             <element signature="n#getPostById#0;n#PostsModel#0;n#!!top" expanded="false" />
             <element signature="n#getComments#0;n#PostsModel#0;n#!!top" expanded="false" />
             <element signature="n#getVotesForComment#0;n#PostsModel#0;n#!!top" expanded="false" />
-            <marker date="1472659646064" expanded="true" signature="204:271" ph="INSERT INTO `posts`... " />
-            <marker date="1472659646064" expanded="true" signature="818:853" ph="DELETE FROM " />
-            <marker date="1472659646064" expanded="true" signature="818:892" ph="DELETE FROM " />
-            <marker date="1472659646064" expanded="true" signature="1121:1193" ph="INSERT INTO `comments`... " />
-            <marker date="1472659646064" expanded="true" signature="1402:1552" ph="SELECT posts... posts" />
-            <marker date="1472659646064" expanded="true" signature="1806:1985" ph="SELECT comme... " />
-            <marker date="1472659646064" expanded="true" signature="2225:2313" ph="SELECT * FRO... comment_votes" />
+            <marker date="1472662937282" expanded="true" signature="204:271" ph="INSERT INTO `posts`... " />
+            <marker date="1472662937282" expanded="true" signature="818:853" ph="DELETE FROM " />
+            <marker date="1472662937282" expanded="true" signature="818:892" ph="DELETE FROM " />
+            <marker date="1472662937282" expanded="true" signature="1122:1194" ph="INSERT INTO `comments`... " />
+            <marker date="1472662937282" expanded="true" signature="1403:1553" ph="SELECT posts... posts" />
+            <marker date="1472662937282" expanded="true" signature="1805:1984" ph="SELECT comme... " />
+            <marker date="1472662937282" expanded="true" signature="2224:2312" ph="SELECT * FRO... comment_votes" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/PostsController.php">
+    <entry file="file://$PROJECT_DIR$/Controllers/CommentsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="196" column="60" selection-start-line="196" selection-start-column="60" selection-end-line="196" selection-end-column="60" />
+        <state relative-caret-position="319">
+          <caret line="34" column="80" selection-start-line="34" selection-start-column="80" selection-end-line="34" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/CommentsModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
           <folding>
-            <element signature="n#all#0;n#PostsController#0;n#!!top" expanded="false" />
-            <element signature="n#index#0;n#PostsController#0;n#!!top" expanded="false" />
-            <element signature="n#create#0;n#PostsController#0;n#!!top" expanded="false" />
-            <element signature="n#edit#0;n#PostsController#0;n#!!top" expanded="false" />
+            <marker date="1472663981662" expanded="true" signature="432:480" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>

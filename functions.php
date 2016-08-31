@@ -38,6 +38,9 @@ function parseURL(string $url){
 
     if(method_exists($controller,$actionName) && is_callable(array($controller,$actionName))){
         $controller->$actionName($params);
+        if($actionName =="deleteComment"){
+            $controller->isPost = true;
+        }
         if($controllerName=="votes"){
 
             $controller->renderView(null,false,false);
