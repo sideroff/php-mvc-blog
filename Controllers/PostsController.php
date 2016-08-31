@@ -74,30 +74,56 @@ class PostsController extends BaseController
         $_SESSION['statement']['comments'] = $comments;
     }
 
-    public function edit(){
-        if($this->isPost){
-            $title=null;
-            $content=null;
-            if($_POST && key_exists('title',$_POST) && strlen($_POST['title'])>0 ){
-                $title=$_POST['title'];
-            }
+    public function edit($params = null){
+        if($params && count($params)>0){
+            $this->currentPostId = $params[0];
+        }
+        else{
+            $this->addMessage("No id of post supplied!",self::$errorMsg);
+            $this->redirect("Posts","all");
+        }
 
-            if(($_POST && key_exists('title',$_POST) && strlen($_POST['content'])>0 )){
-                $content=$_POST['content'];
-            }
-            if(!$title || !$content){
-                $this->addMessage("Post title/content cannot be blank!",self::$errorMsg);
-                $this->redirect("Posts","index",[$this->currentPostId]);
-            }
-            $statement = $this->model->index($title,$content);
+        if(!$this->isPost){
+            $statement = $this->model->getPostById($this->currentPostId);
             if($statement->error){
-                $this->addMessage("Something went wrong while proccessing your request: " . $statement->error,self::$errorMsg);
+                $this->addMessage("Something went wrong while getting post! ".$statement->error, self::$errorMsg);
                 $this->redirect("Posts","all");
             }
-            else{
-                $this->addMessage("Your changes have been saved!",self::$successMsg);
-                $this->redirect("Posts","index",[$this->currentPostId]);
+            $post = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
+            if(count($post)==0){
+                $this->addMessage("No post with such id found", self::$errorMsg);
+                $this->redirect("Posts","all");
             }
+            $post= $post[0];
+            $this->checkSession();
+            if(!($this->isLoggedIn) || $post['username']!=$_SESSION['username']){
+                $this->addMessage("Action prohibited!", self::$errorMsg);
+                $this->redirect("Posts","all");
+            }
+            $_SESSION['post'] = $post;
+            return;
+        }
+        $title=null;
+        $content=null;
+        if($_POST && key_exists('title',$_POST) && strlen($_POST['title'])>0 ){
+            $title=$_POST['title'];
+        }
+
+        if(($_POST && key_exists('content',$_POST) && strlen($_POST['content'])>0 )){
+            $content=$_POST['content'];
+        }
+        if(!$title || !$content){
+            $this->addMessage("Post title/content cannot be blank!",self::$errorMsg);
+            $this->redirect("Posts","index",[$this->currentPostId]);
+        }
+        $statement = $this->model->edit($_SESSION['post']['post_id'],$title,$content);
+        if($statement->error){
+            $this->addMessage("Something went wrong while editing post: " . $statement->error,self::$errorMsg);
+            $this->redirect("Posts","all");
+        }
+        else{
+            $this->addMessage("Your changes have been saved!",self::$successMsg);
+            $this->redirect("Posts","index",[$this->currentPostId]);
         }
     }
 

@@ -14,6 +14,10 @@
     <div class="content"><?= $statement['content'] ?></div>
     <div class="author">Author:<i> <?= $statement['username'] ?></i></div>
     <div class="date">Date created: <i><?= $statement['date_created']?></i> </div>
+    <?php if($_SESSION && key_exists('username',$_SESSION) && $statement['username'] == $_SESSION['username']) : ?>
+        <a href="<?php echo APP_ROOT.'/posts/edit/'.$statement['post_id']?>" class="edit-post" id="<?php echo $statement['post_id']?>">Edit!</a>
+
+    <?php endif; ?>
 </div>
 
 

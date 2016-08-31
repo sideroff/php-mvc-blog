@@ -3,18 +3,18 @@
 class PostsModel extends BaseModel
 {
     
-    public function index($title,$content){
+    public function edit($id,$title,$content){
         $statement = self::$db->prepare("UPDATE `posts` ".
             "SET `title`= ?,`content`= ? ".
             "WHERE id = ? ");
         
-        $statement->bind_param("ss",$title,$content);
+        $statement->bind_param("ssi",$title,$content,$id);
         $statement->execute();
         
         return $statement;
     }
     public function getPostById(int $id){
-        $query = "SELECT posts.id,title,content,author_id, date_created, username FROM posts LEFT JOIN users ON posts.author_id = users.id WHERE posts.id = ?";
+        $query = "SELECT posts.id AS post_id,title,content,author_id, date_created, username FROM posts LEFT JOIN users ON posts.author_id = users.id WHERE posts.id = ?";
         $statement = self::$db->prepare($query);
 
         $statement->bind_param("i",$id);
