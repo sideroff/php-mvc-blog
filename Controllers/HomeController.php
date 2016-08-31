@@ -13,17 +13,11 @@ class HomeController extends BaseController
         $this->posts = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
 
 
-        unset($statement);
         $statement = $this->model->getLatestRegisteredUserUsername(1);
         $this->checkStatement($statement);
         $result = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
         $this->latestUserRegisteredUsername = $result[0]['username'];
         
     }
-    private function checkStatement($statement){
-        if($statement->error) {
-            require_once "../Views/_layout/internal-error.php";
-            die();
-        }
-    }
+    
 }

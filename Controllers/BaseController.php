@@ -77,4 +77,11 @@ abstract class BaseController
         }
         $this->isLoggedIn = false;
     }
+    
+    protected function checkStatement($statement){
+        if($statement->error) {
+            require_once "../Views/_layout/internal-error.php";
+            die();
+        }
+    }
 }

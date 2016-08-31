@@ -4,6 +4,12 @@ class PostsController extends BaseController
 {
     private $currentPostId;
 
+    public function all(){
+        $statement = $this->model->getPosts();
+        $this->checkStatement($statement);
+        $this->posts = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function index($params=null){
         if($params && count($params)>0){
             $this->currentPostId = $params[0];
